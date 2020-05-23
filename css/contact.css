@@ -54,6 +54,7 @@ body{
     border: none;
     margin-bottom: 1em;
     resize: none;
+    width: 13.2em;
 }
 
 .form-container input[type="submit"]{
