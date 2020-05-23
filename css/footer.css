@@ -44,6 +44,7 @@ footer .col{
     -moz-box-sizing: border-box;
     padding-left: 2em;
     padding-right: 2em;
+    vertical-align: text-top;
 }
 
 footer .col span{
