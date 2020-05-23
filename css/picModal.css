@@ -1,0 +1,125 @@
+
+.modalColumn{  /*Thumbnail and picture column display*/
+    float:left;
+    width: 33.333%;
+}
+
+.modal{ /*Full Page Background*/
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content{  /*Images displayed in background*/
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.closeIcon{  /*Close Icon*/
+    color:white;
+    position: absolute;
+    top: 10px;
+    right:25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.closeIcon:hover, .closeIcon:focus{
+    background: -webkit-linear-gradient(0deg, #4776e6, #8e54e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.picSlides{ /*Thumbnails*/
+    display: none;
+}
+
+.prev,.next{  /*Previous and Next Buttons*/
+    cursor: pointer;
+    position:absolute;
+    top:50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev{ 
+    left: 0;
+    border-radius: 0px 3px 3px 0px;
+    background-image: linear-gradient(90deg, #4776e6, #8e54e9);
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    background-image: linear-gradient(90deg, #4776e6, #8e54e9);
+}
+
+.prev:hover, .next:hover{
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.359)
+}
+
+.numIcon{ /*Number display*/
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.caption-container{ /*Caption display*/
+    text-align: center;
+    background-image: linear-gradient(90deg, #4776e6, #8e54e9);
+    padding: .002px;
+    width: 100%;
+    color: white;
+    margin: .5em;
+}
+
+.fulldisplay{
+    width: 70%;
+    height: auto;
+}
+
+.thumbnail{
+    opacity: .5em;
+    width: 13em;
+    height: auto;
+
+}
+
+.active, .thumbnail:hover{
+    transition: 0.3s;
+}
+
+.thumbnail:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,.7);
+    cursor: pointer;
+
+}
+
+.hover-shadow:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,.7);
+    cursor: pointer;
+
+}

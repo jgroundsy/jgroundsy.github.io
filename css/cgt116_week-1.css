@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    background-color: rgb(32, 32, 50);
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.main{ /*Main Page Container*/
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.main #header{ /*Page Header*/
+    width: 100%;
+    min-height: 16em;
+    height:auto;
+    background-image: url("/Projects/CGT116/Week-1/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0px 0px .5em .1em black;
+    display: inline-block;
+}
+
+.main #header h1{
+    margin-top: 2.5em;
+}
+
+.main #header h4{
+    margin-top: -1em;
+    color: rgb(177, 177, 177);
+}
+
+.main #header button{
+    padding: 1em;
+    color: white;
+    font-size: .8em;
+    background-image: linear-gradient(90deg, #4776e6, #8e54e9);
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: -.5em;
+    margin-bottom: 1em;
+}
+
+.main #header button img{
+    height: 1em;
+    width: 1em;
+    margin-right: .3em;
+}
+
+.main #header button img{
+    height: 1em;
+    width: 1em;
+    margin-right: .3em;
+}
+
+.main #header button:hover{
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.359);
+}
+
+.content{ /*Page Content*/
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    background-image: url("/images/main/bg1.jpg");
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.content h1{
+    font-size: 1em;
+    margin-top: 3em;
+}
+
+.sketchfab-embed-wrapper{
+    display: inline;
+    padding-bottom: 1em;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: white;
+}
