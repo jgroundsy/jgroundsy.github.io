@@ -26,6 +26,12 @@ body{
     border-radius: 1em;
 }
 
+.form-container .form-width{
+    width: 16em;
+    margin: 0 auto;
+
+}
+
 .form-container h1{
     margin: 0;
 }
@@ -35,26 +41,53 @@ body{
     color: rgb(183, 183, 183);
 }
 
-.form-container label{
-    float: left;
-    text-align: right;
-    width: 4.5em;
-    margin-right: -3em;
+.form-container .form-width input[type="text"]{
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: .5em;
+    font-size: .7em;
+    font-family: 'Lexend Deca', sans-serif;
+
 }
 
-.form-container input[type="text"]{
-    border-radius: .5em;
-    border: none;
-    padding: .5em 3.2em .5em 0;
+.form-container .form-width #form-name{
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    border-image: linear-gradient(90deg, #4776e6, #8e54e9) 1;
+    border-bottom-width: 1em;
+    border-bottom: solid;
+}
+
+.form-container .form-width #form-email{
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
     margin-bottom: 1em;
 }
 
-.form-container textarea{
-    border-radius: .5em;
-    border: none;
+.form-container .form-width #form-subject{
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    border-image: linear-gradient(90deg, #4776e6, #8e54e9) 1;
+    border-bottom-width: 1em;
+    border-bottom: solid;
+}
+
+.form-container .form-width textarea{
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
     margin-bottom: 1em;
+    border: none;
     resize: none;
-    width: 13.2em;
+    width: 100%;
+    font-family: 'Lexend Deca', sans-serif;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: .7em;
+    padding: .5em;
 }
 
 .form-container input[type="submit"]{

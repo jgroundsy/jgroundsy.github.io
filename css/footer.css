@@ -68,6 +68,23 @@ footer .col .post #chicky_nuggies{
     cursor:pointer;
 }
 
+footer .col .post #cgt116{
+    width: 5em;
+    height: 1.5em;
+    background-image: url("/images/main/footer/cgt116_icon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    filter: invert() brightness(100%) opacity(40%);
+    border-radius: 1em; 
+    display:inline-block;
+    cursor:pointer;
+}
+
+footer .col .post #cgt116:hover{
+    filter: invert(40%) sepia(70%) saturate(1999%) hue-rotate(180deg) brightness(99%) contrast(102%);
+}
+
 footer .col .post #chicky_nuggies:hover{
     filter: invert(51%) sepia(42%) saturate(419%) hue-rotate(44deg) brightness(97%) contrast(88%);
 }

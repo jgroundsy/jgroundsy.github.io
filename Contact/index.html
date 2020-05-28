@@ -36,7 +36,6 @@
 
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="/scripts/loadEssentials.js"></script>
-        <script src="/scripts/formAttr.js"></script>
     </head>
 
     <body>
@@ -49,14 +48,12 @@
             <h1>Any questions?</h1><br>
             <p>Submit them here!</p><br><br>
             <form action="https://getsimpleform.com/messages?form_api_token=67cac7e7015098689c84839c616a1c64" method="post">
-                <label for="name">Name: </label>
-                <input type="text" name="name" id="form-name" required/><br>
-                <label for="email">E-Mail: </label>
-                <input type="text" name="email" id="form-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid e-mail address" required/><br>
-                <label for="subject">Subject: </label>
-                <input type="text" name="subject" id="form-subject" required><br>
-                <label for="message">Message: </label>
-                <textarea name="message" required id= "form-message" rows="10"  maxlength="255"></textarea><br>
+                <div class="form-width">
+                <input type="text" name="name" id="form-name" required placeholder="Name"/><br>
+                <input type="text" name="email" id="form-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid e-mail address" required placeholder="E-mail Address"/><br>
+                <input type="text" name="subject" id="form-subject" required placeholder="Subject"><br>
+                <textarea name="message" required id= "form-message" rows="10"  maxlength="255" placeholder="Message"></textarea><br>
+                </div>
                 <p id=charcount>Characters left: 256</p><br>
                 <input type="submit" value="Send Message">
               </form>
@@ -68,5 +65,14 @@
 
 
     </body>
+
+    <script>
+    $(document).ready(function(){
+        $("#form-message").on("input", function(){
+            var charCount = $("#form-message").val().length;
+            $("#charcount").html("Characters left: " + (256 - charCount));
+    
+        })
+    })</script>
 </html>
 

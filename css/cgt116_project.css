@@ -17,7 +17,7 @@ body{
     width: 100%;
     min-height: 16em;
     height:auto;
-    background-image: url("/Projects/CGT116/Week-7/banner.jpg");
+    background-image: url("/Projects/CGT116/Week-6/banner.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,4 +86,24 @@ body{
     border-bottom: solid;
     border-width: thin;
     border-color: white;
+    clear: right;
 }
+
+.imgs{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 3em;
+}
+
+.imgs img{
+    width: 200px;
+    height: 200px;
+}
+
+.content #pdf{
+    width: 640px;
+    height: 500px;
+}
+
+
