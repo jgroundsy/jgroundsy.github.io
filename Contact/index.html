@@ -35,7 +35,6 @@
         <meta name ="viewport" content="width=device-width,initial-scale=1.0">
 
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="/scripts/loadEssentials.js"></script>
     </head>
 
@@ -56,52 +55,8 @@
                 <textarea name="message" required id= "form-message" rows="10"  maxlength="255" placeholder="Message"></textarea><br>
                 </div>
                 <p id=charcount>Characters left: 256</p><br>
-                <div class="g-recaptcha" data-sitekey="6LdDjv0UAAAAAD4eogTdG8Pb8iEtOe7_3auK7EzL"></div>
                 <input type="submit" value="Send Message">
               </form>
-
-              <?php
-
-if(isset($_POST['submit']))
-{
-
-function CheckCaptcha($userResponse) {
-        $fields_string = '';
-        $fields = array(
-            'secret' => '6LdDjv0UAAAAALmV-P06u0k2Llj61iLmwPpaw1B7' ,
-            'response' => $userResponse
-        );
-
-        foreach($fields as $key=>$value)
-        $fields_string .= $key . '=' . $value . '&';
-        $fields_string = rtrim($fields_string, '&');
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
-        curl_setopt($ch, CURLOPT_POST, count($fields));
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
-
-        $res = curl_exec($ch);
-        curl_close($ch);
-
-        return json_decode($res, true);
-    }
-
-
-    // Call the function CheckCaptcha
-    $result = CheckCaptcha($_POST['g-recaptcha-response']);
-
-    if ($result['success']) {
-        //If the user has checked the Captcha box
-        echo "Captcha verified Successfully";
-	
-    } else {
-        // If the CAPTCHA box wasn't checked
-       echo '<script>alert("Error Message");</script>';
-    }
-}
-    ?>
 
             </div>
         </div>
@@ -109,5 +64,15 @@ function CheckCaptcha($userResponse) {
         <footer></footer>
 
     </body>
+
+    <script>
+        $(document).ready(function(){
+            $("#form-message").on("input", function(){
+                var charCount = $("#form-message").val().length;
+                $("#charcount").html("Characters left: " + (256 - charCount));
+        
+            })
+        })</script>
+
 </html>
 
