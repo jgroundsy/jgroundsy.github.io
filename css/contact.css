@@ -57,6 +57,9 @@ body{
     border-top-left-radius: .5em;
     border-top-right-radius: .5em;
     border-image: linear-gradient(90deg, #4776e6, #8e54e9) 1;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
     border-bottom-width: 1em;
     border-bottom: solid;
 }
@@ -71,6 +74,9 @@ body{
     border-top-left-radius: .5em;
     border-top-right-radius: .5em;
     border-image: linear-gradient(90deg, #4776e6, #8e54e9) 1;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
     border-bottom-width: 1em;
     border-bottom: solid;
 }
