@@ -55,7 +55,7 @@ footer .col span{
 }
 
 
-footer .col .post #chicky_nuggies{
+footer .col .post #chicky_nuggies-icon{
     width: 5em;
     height: 1.5em;
     background-image: url("/images/main/footer/chicky_nuggies_icon.png");
@@ -68,7 +68,7 @@ footer .col .post #chicky_nuggies{
     cursor:pointer;
 }
 
-footer .col .post #cgt116{
+footer .col .post #cgt116-icon{
     width: 5em;
     height: 1.5em;
     background-image: url("/images/main/footer/cgt116_icon.png");
@@ -81,11 +81,11 @@ footer .col .post #cgt116{
     cursor:pointer;
 }
 
-footer .col .post #cgt116:hover{
+footer .col .post #cgt116-icon:hover{
     filter: invert(40%) sepia(70%) saturate(1999%) hue-rotate(180deg) brightness(99%) contrast(102%);
 }
 
-footer .col .post #chicky_nuggies:hover{
+footer .col .post #chicky_nuggies-icon:hover{
     filter: invert(51%) sepia(42%) saturate(419%) hue-rotate(44deg) brightness(97%) contrast(88%);
 }
 

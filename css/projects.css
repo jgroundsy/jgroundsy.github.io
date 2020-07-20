@@ -70,11 +70,12 @@ body{
 #cgt118{
     background-image: url("/images/projects/cgt118/banner.jpg");
     background-position: center;
-    background-color: rgb(32,32,50);
+    background-color: white;
 }
 
 #hosdb{
     background-image: url("/images/projects/hosdb/banner.jpg");
     background-position: center;
-    background-color: white;
+    background-color: rgb(32,32,50);
 }
+
