@@ -127,7 +127,7 @@ body{
 .content .bar-container #bar-html{
     background-image: linear-gradient(90deg, #e85029, #f1662d);
     height: 100%;
-    width: 64%;
+    width: 31.2%;
     border-radius: .2em 0em 0em .2em;
     transition: width 1s;
 }
@@ -135,14 +135,14 @@ body{
 .content .bar-container #bar-css{
     background-image: linear-gradient(90deg, #0d72b8, #30aadb);
     height: 100%;
-    width: 36%;
+    width: 36.6%;
     transition: width 1s;
 }
 
 .content .bar-container #bar-js{
     background-image: linear-gradient(90deg, #e8a229, #f2bf26);
     height: 100%;
-    width: 5%;
+    width: 33.2%;
     border-radius: 0em .2em .2em 0em;
     transition: width 1s;
 }
