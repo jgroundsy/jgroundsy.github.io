@@ -103,59 +103,47 @@ body{
     -webkit-text-fill-color: transparent;
 }
 
-
-.content .bar-container{
-    float:left;
-    width: 80%;
+.bar-container{
+    display: inline-block;
+    width: 70%;
     height: 1.5em;
     background-image: radial-gradient(rgb(203, 203, 203), rgb(157, 157, 157));
     background-size: cover;
     border-radius: .2em;
     box-shadow: 0 0 .5em .1em rgba(0,0,0,.557);
-    display: flex;
 }
 
-.content .bar-container .bar-fill .tooltip{
-    opacity: 0;
-    transition: opacity 1s;
+.bar-container > .bar-fill{
+    height: 100%;
+    display: inline-block;
+    position: relative; 
 }
 
-.content .bar-container .bar-fill:hover .tooltip{
-    opacity: 1;
+.bar-fill > p{
+    display: inline;
+    position: relative;
+    margin-left: .5em;
 }
 
-.content .bar-container #bar-html{
+.bar-container > #html{
+    width: 36%;
     background-image: linear-gradient(90deg, #e85029, #f1662d);
     height: 100%;
-    width: 31.2%;
-    border-radius: .2em 0em 0em .2em;
-    transition: width 1s;
+    border-radius: .2em 0 0 .2em;
+
 }
 
-.content .bar-container #bar-css{
+.bar-container > #css{
+    width: 44%;
     background-image: linear-gradient(90deg, #0d72b8, #30aadb);
     height: 100%;
-    width: 36.6%;
-    transition: width 1s;
 }
 
-.content .bar-container #bar-js{
+.bar-container > #js{
+    width: 20%;
     background-image: linear-gradient(90deg, #e8a229, #f2bf26);
     height: 100%;
-    width: 33.2%;
-    border-radius: 0em .2em .2em 0em;
-    transition: width 1s;
-}
-
-
-.content .bar-container #bar-html:hover{
-    width: 75%;
-}
-.content .bar-container #bar-css:hover{
-    width:75%;
-}
-.content .bar-container #bar-js:hover{
-    width: 75%;
+    border-radius: 0 .2em .2em 0;
 }
 
 .content .images{

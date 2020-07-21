@@ -110,7 +110,7 @@ body{
     transparent);
     z-index: 1;
     background-size: 50px 50px;
-    animation: move 2s linear infinite;
+    animation: move 5s linear infinite;
     overflow: hidden;
 }
 
@@ -121,4 +121,13 @@ body{
     height: auto;
 
 }
+  
+  @-webkit-keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 50px;
+    }
+  }
 
