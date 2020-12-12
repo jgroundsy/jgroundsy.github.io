@@ -16,7 +16,7 @@ footer .contain{
     position: relative;
     width: 90%;
     height: auto;
-    text-align: cetner;
+    text-align: center;
 }
 
 footer p{
@@ -24,16 +24,18 @@ footer p{
 }
 
 footer h1{
-    font-size: 2.5vw;
+    font-size: 1em;
 }
 
 footer h2{
-    font-size: 1.5vw;
+    font-size: .6em;
 }
 
 footer a{
     text-decoration: none;
+    font-size: .8em;
 }
+
 
 
 footer .col{
