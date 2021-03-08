@@ -203,9 +203,9 @@ body{
     background-image: linear-gradient(90deg, #e8a229, #f2bf26);
     width: 45%;
 }
-.skillbar-fill[id="jquery"]{
-    background-image: linear-gradient(90deg, #0769ad, #78cff5);
-    width: 30%;
+.skillbar-fill[id="php"]{
+    background-image: linear-gradient(90deg, #474a8a, #787cb5);
+    width: 19%;
 }
 .skillbar-fill[id="photoshop"]{
     background-image: linear-gradient(90deg, #3c327b, #8bc3fc);
