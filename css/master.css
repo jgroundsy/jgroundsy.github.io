@@ -89,10 +89,10 @@ body{
     filter: invert(67%) sepia(75%) saturate(6635%) hue-rotate(343deg) brightness(97%) contrast(95%);
 }
 
-.sociallinks #instagram{
+.sociallinks #linkedin{
     width: 1.5em;
     height: 1.5em;
-    background-image: url("/images/main/sociallinks/instagram.png");
+    background-image: url("/images/main/sociallinks/linkedin.png");
     background-repeat: no-repeat;
     background-size: contain;
     filter: invert() brightness(100%) opacity(40%);
@@ -101,8 +101,8 @@ body{
     cursor:pointer;
 }
 
-.sociallinks #instagram:hover{
-    filter: invert(30%) sepia(81%) saturate(1500%) hue-rotate(321deg) brightness(91%) contrast(94%);
+.sociallinks #linkedin:hover{
+    filter: invert(34%) sepia(98%) saturate(914%) hue-rotate(170deg) brightness(88%) contrast(103%);
 }
 
 .sociallinks #discord{
