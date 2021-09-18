@@ -51,24 +51,26 @@ body{
     box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.359);
 }
 
-#astar{
-    background-image: url("/images/projects/astar-algorithm/banner.jpg");
+#cgt241{
+    background-image: url("/images/projects/cgt241/banner.jpg");
     background-position: center;
     background-color: rgb(32,32,50);
 }
 
-#chickynuggies{
-    background-image: url("/images/projects/chicky-nuggies/banner.jpg");
+#astar{
+    background-image: url("/images/projects/astar-algorithm/banner.jpg");
+    background-position: center;
     background-color: white;
-}
-
-#bucket{
-    background-image: url("/images/projects/bucket/banner.jpg");
-    background-color: rgb(32,32,50);
 }
 
 #cgt116{
     background-image: url("/images/projects/cgt116/banner.jpg");
+    background-position: center;
+    background-color: rgb(32,32,50);
+}
+
+#hosdb{
+    background-image: url("/images/projects/hosdb/banner.jpg");
     background-position: center;
     background-color: white;
 }
@@ -76,13 +78,19 @@ body{
 #cgt118{
     background-image: url("/images/projects/cgt118/banner.jpg");
     background-position: center;
+    background-color: rgb(32,32,50);
+}
+
+#bucket{
+    background-image: url("/images/projects/bucket/banner.jpg");
     background-color: white;
 }
 
-#hosdb{
-    background-image: url("/images/projects/hosdb/banner.jpg");
-    background-position: center;
+#chickynuggies{
+    background-image: url("/images/projects/chicky-nuggies/banner.jpg");
     background-color: rgb(32,32,50);
 }
+
+
 
 
