@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Jared Grounds - CGT241</title>
+        <meta name="description" content="Portfolio">
+        <meta name="author" content="Jared Grounds">
+
+        <link rel="stylesheet" href="/css/cgt241.css">
+        <link rel="stylesheet" href="/css/picZoom.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="/scripts/loadEssentials.js"></script>
+        <script src="/scripts/playGif.js"></script>
+        <script src="/scripts/picZoom.js"></script>
+    </head>
+
+    <body>
+        
+        <div class="navbar"></div>
+
+        <div class="main">
+            <div id="header"> <!--Heading-->
+                <h1>CGT241</h1>
+                <h4>Intro to Animation and Spatial Graphics</h4>
+                <div class="desc">
+                   Includes weekly Maya® modeling exercises during my CGT241 class at Purdue University.
+                </div>
+                <h6>Last update: September 18th, 2021</h6>
+                <button onclick="window.location.href = '/Projects/';"><img src="/images/projects/back_icon.png">Back to Projects</button>
+            </div>
+            
+            <div class="content"> <!--Page content container-->
+               <div class="post" onclick="openZoom('post1')"> <!--Image containers-->
+                    <div class="image">
+                        <img id="ex1-img" src="files/ex1_static.png">
+                    </div>
+
+                    <div class="title">
+                        <h1>Solar System</h1>
+                    </div>
+               </div>
+
+               <div class="post" onclick="openZoom('post2')">
+                    <div class="image">
+                        <img id="ex2-img" src="files/ex2_static.png">
+                    </div>
+
+                    <div class="title">
+                        <h1>Antique Telephone</h1>
+                    </div>
+               </div>
+
+               <div class="post" onclick="openZoom('post3')">
+                    <div class="image">
+                        <img id="ex3-img" src="files/ex3_static.png">
+                    </div>
+
+                    <div class="title">
+                        <h1>Character Model</h1>
+                    </div>
+               </div>
+        </div>
+
+        <div id="picZoom"> <!--Full images displayed inside modal-->
+            <span class="closeIcon" onclick="closeZoom()">&times;</span> 
+            <img class="picZoom-content" id="post1" src="files/ex1_gif.gif">
+            <img class="picZoom-content" id="post2" src="files/ex2_gif.gif">
+            <img class="picZoom-content" id="post3" src="files/ex3_gif.gif">
+        </div>
+
+        <footer></footer>
+
+    </body>
+</html>
+
