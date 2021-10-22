@@ -25,3 +25,13 @@ $(function() {
     });
 });
 
+$(function() {
+    $("#ex4-img").hover(function(){
+        $(this).attr("src", "files/ex4_gif.gif");
+    },
+    function(){
+        $(this).attr("src", "files/ex4_static.png");
+    });
+});
+
+
