@@ -18,7 +18,7 @@ $( document ).ready(function() {
    const accessToken = getUrlParameter('access_token');
 
    let client_id = '469bd5869aed44cea1231106e409a209';
-   let redirect_uri = 'http%3A%2F%2Flocalhost%3A5500%2F';
+   let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue';
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state&redirect_uri=${redirect_uri}`;
 
