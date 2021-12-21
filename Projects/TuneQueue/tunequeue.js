@@ -89,7 +89,7 @@ $( document ).ready(function() {
                 trackElement.innerHTML = ("<img class='track-img' src='" + image + "'> <h1>" + name + "</h1> <h2>" + artists.substring(2) + "</h2> <div class='track-indicator'></div>");
 
                 if(isExplicit){
-                    trackElement.innerHTML += "<img src='/images/explicit.png' class='explicit-icon'/>";
+                    trackElement.innerHTML += "<img src='images/explicit.png' class='explicit-icon'/>";
                 }
                 $('#track-list').append(trackElement);
 
