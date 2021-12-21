@@ -15,16 +15,27 @@ $( document ).ready(function() {
  };
 
    // Get Access Token
-   const accessToken = getUrlParameter('access_token');
+   //const accessToken = getUrlParameter('access_token');
+   var accessToken;
+   localStorage.setItem('accessToken', getUrlParameter('access_token'));
 
    let client_id = '469bd5869aed44cea1231106e409a209';
-   let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html';
+   let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html'; //'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html' http%3A%2F%2Flocalhost%3A5500%2F
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state&redirect_uri=${redirect_uri}`;
 
-   if(accessToken == null || accessToken == "" || accessToken == undefined){
-    window.location.replace(redirect);
-   }
+    if(!localStorage.getItem('accessToken') || localStorage.getItem('accessToken') == null || localStorage.getItem('accessToken') == undefined || localStorage.getItem('accessToken') == "" || localStorage.getItem('accessToken') == "undefined"){
+        window.location.replace(redirect);
+    }else{
+        accessToken = localStorage.getItem('accessToken');
+        console.log(accessToken);
+    }
+
+//    if(accessToken == null || accessToken == "" || accessToken == undefined){
+//     window.location.replace(redirect);
+//    }
+
+
 
    ///Current logged in user information
    $.ajax({
