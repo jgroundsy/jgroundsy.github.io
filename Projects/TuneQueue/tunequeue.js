@@ -16,15 +16,19 @@ $( document ).ready(function() {
 
    // Get Access Token
    const accessToken = getUrlParameter('access_token');
+   window.localStorage.setItem('accessToken', accessToken);
+
 
    let client_id = '469bd5869aed44cea1231106e409a209';
    let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue';
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state&redirect_uri=${redirect_uri}`;
 
-//    if(accessToken == null || accessToken == "" || accessToken == undefined){
-//      window.location.replace(redirect);
-//    }
+   if(accessToken == null && window.localStorage.getItem('accessToken') == null){
+     window.location.replace(redirect);
+   }else{
+       accessToken = window.localStorage.getItem('accessToken');
+   }
 
    ///Current logged in user information
    $.ajax({
