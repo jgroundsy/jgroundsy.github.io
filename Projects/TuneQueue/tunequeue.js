@@ -100,7 +100,7 @@ $( document ).ready(function() {
    });
 
    //Add selected track to the current user's queue
-   $(document).on('click', '.track', function(){
+   $(document).on('click touchend', '.track', function(){
     var id = $(this).attr('id'); 
     $.ajax({
         type: 'POST',
