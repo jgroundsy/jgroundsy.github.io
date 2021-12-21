@@ -22,9 +22,9 @@ $( document ).ready(function() {
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state&redirect_uri=${redirect_uri}`;
 
-   if(accessToken == null || accessToken == "" || accessToken == undefined){
-     window.location.replace(redirect);
-   }
+//    if(accessToken == null || accessToken == "" || accessToken == undefined){
+//      window.location.replace(redirect);
+//    }
 
    ///Current logged in user information
    $.ajax({
