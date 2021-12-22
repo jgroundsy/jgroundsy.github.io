@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+#header{
+    font-weight: bold;
+    color: #1db954;
+    margin-top: 75px;
+}
+
+#header i{
+    margin-right: 10px;
+}
+
+#subheader{
+    font-weight: lighter;
+    font-size: 16px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255,0.7);
+}
+
+#search-wrapper{
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#search-wrapper input[type='text']{
+    background-color: black;
+    border: 2px solid #1db954;
+    border-radius: 10px;
+    width: 200px;
+    height: 25px;
+    color: white;
+    padding-left: 10px;
+}
+
+#submit-search{
+    background-color: #1db954;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    height: 32px;
+    width: 32px;
+    transition: background-color 300ms ease-in-out;
+}
+
+#submit-search:hover{
+    background: #1ed760;
+    cursor: pointer;
+}
+
+#error-msg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 20px;
+    margin-left: -150px;
+    margin-top: -10px;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    display: none;
+    opacity: 0;
+}
+
+.track{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #191414;
+    width: 500px;
+    height: 150px;
+    margin: 0 auto; 
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 300ms ease-in-out;
+    z-index: 0;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.track:hover{
+    background-color: #2f2f2f;
+}
+
+.track-indicator{
+    position: absolute;
+    width: 500px;
+    height: 150px;
+    background-color: #1db954;
+    top: 0px;
+    left: -350px;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.track h1{
+    position: absolute;
+    top: 5px;
+    left: 160px;
+    color: white;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.track h2{
+    position: absolute;
+    top: 35px;
+    left: 160px;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    z-index: 2;
+}
+
+.track .track-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px 0px 0px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.explicit-icon{
+    filter: invert() opacity(0.5);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-top: -23px;
+    margin-left: -25px;
+}
