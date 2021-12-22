@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+    var toggleHistory = false;
+
    const getUrlParameter = (sParam) => {
      let sPageURL = window.location.search.substring(1),
          sURLVariables = sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split('#') : [],
@@ -20,7 +22,7 @@ $( document ).ready(function() {
    localStorage.setItem('accessToken', getUrlParameter('access_token'));
 
    let client_id = '469bd5869aed44cea1231106e409a209';
-   let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html'; //'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html' http%3A%2F%2Flocalhost%3A5500%2F
+   let redirect_uri = 'http%3A%2F%2Flocalhost%3A5500%2F'; //'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html' 'http%3A%2F%2Flocalhost%3A5500%2F'
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state&redirect_uri=${redirect_uri}`;
 
@@ -99,14 +101,66 @@ $( document ).ready(function() {
        });
    });
 
+   //Hide and show recent track history
+   $(document).on('click touchend', '#history-btn', function(){
+       
+    if(toggleHistory){
+        $('#recent-tracks').animate({
+            'margin-left': '+=250px'
+        });
+        toggleHistory = false;
+    }else if(!toggleHistory){
+        $('#recent-tracks').animate({
+            'margin-left': '-=250px'
+        });
+        toggleHistory = true;
+    }
+    });
+
+
+    //add recent track in history to queue
+    $(document).on('click', '.recent-track', function(){
+        var id = $(this).attr('id').substring(8);
+        var name = $(this).find('h1').text();
+        var artists = $(this).find('h2').text();
+        var image = $(this).find('img').attr('src');
+
+        $.ajax({
+            type: 'POST',
+            url: 'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A'+id,
+            headers: {'Authorization': "Bearer " + accessToken},
+            success: function(data){
+                var historyElement = document.createElement('div');
+                historyElement.className = 'recent-track'
+                historyElement.id = ('history-'+id);
+    
+                historyElement.innerHTML = ("<img src='" + image + "'> <h1>" + name + "</h1> <h2>" + artists + "</h2>");
+                $('#recent-tracks').prepend(historyElement);
+                updateHistoryOpacity();
+            }
+        });
+    });
+
    //Add selected track to the current user's queue
    $(document).on('click touchend', '.track', function(){
-    var id = $(this).attr('id'); 
+    var id = $(this).attr('id');
+    var name = $(this).find('h1').text();
+    var artists = $(this).find('h2').text();
+    var image = $(this).find('img').attr('src');
+    
     $.ajax({
         type: 'POST',
         url:'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A'+id,
         headers: {'Authorization': "Bearer " + accessToken},
         success: function(data) {
+            var historyElement = document.createElement('div');
+            historyElement.className = 'recent-track'
+            historyElement.id = ('history-'+id);
+    
+            historyElement.innerHTML = ("<img src='" + image + "'> <h1>" + name + "</h1> <h2>" + artists + "</h2>");
+            $('#recent-tracks').prepend(historyElement);
+            updateHistoryOpacity();
+
             $('#'+id).find('div.track-indicator').animate({
                 left: '+=350px'
             },300, function(){
@@ -137,6 +191,23 @@ $('#search-track').keypress(function(event){
         $('#submit-search').click();
     }
 });
+
+//linear interpolation used for updating list opacity
+const lerp = (x,y,a) => x * (1 - a) + y * a;
+
+//Update history track opacity
+function updateHistoryOpacity(){
+    var fromOpacity = 1;
+    var toOpacity = 0.2;
+
+    var trackCount  = $('#recent-tracks .recent-track').length;
+    for(var i = trackCount - 1; i > 0; i--){
+        $('#recent-tracks').children().eq(i).css({
+            opacity: lerp(fromOpacity, toOpacity, ((i+1) / (trackCount)))
+        });
+    }
+
+}
 
  }); // End of document.ready
 
