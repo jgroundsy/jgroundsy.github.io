@@ -114,9 +114,23 @@ $( document ).ready(function() {
             });
         });
         });
+
+        addTrackToPlaylist(id);
     }
     });
 });
+
+
+function addTrackToPlaylist(trackID){
+    $.ajax({
+        type: 'POST',
+        url: 'https://api.spotify.com/v1/playlists/2JDdTHWdW0Ak5zjFAIOspn/uris=spotify%3Atrack%3A'+trackID,
+        headers: {'Authorization': "Bearer " + accessToken},
+        success: function(){
+            console.log('Saved ' + trackID + ' to playlist');
+        }
+    });
+}
 
 //Handle pressing enter button to click search button
 $('#search-track').keypress(function(event){
