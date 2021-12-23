@@ -22,8 +22,13 @@ $( document ).ready(function() {
 
     const db = getDatabase();
     const dbRef = ref(getDatabase());
-
     //END FIREBASE INITIALIZATION 
+
+    var toggleQueuePlaylist;
+    var mouseY = 0;
+    var startMouseY = 0;
+    var dt = new Date();
+    $('#queue-playlist-bar').find('h1').text('Last updated: ' + (dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds()));
 
    const getUrlParameter = (sParam) => {
      let sPageURL = window.location.search.substring(1),
@@ -41,22 +46,19 @@ $( document ).ready(function() {
  };
 
    // Get Access Token
-   var accessToken;
-   localStorage.setItem('accessToken', getUrlParameter('access_token'));
+   var accessToken = getUrlParameter('access_token');
    set(ref(db, 'accessKey'), localStorage.getItem('accessToken'));
 
    let client_id = '469bd5869aed44cea1231106e409a209';
-   let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue-host%2Findex.html'; //https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue%2Findex.html' 'http%3A%2F%2Flocalhost%3A5500%2F'
+   let redirect_uri = 'http%3A%2F%2Flocalhost%3A5500%2F'; //'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue-host%2Findex.html' 'http%3A%2F%2Flocalhost%3A5500%2F'
 
-   const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state,playlist-modify-private&redirect_uri=${redirect_uri}`;
+   const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state,playlist-modify-private,playlist-read-private&redirect_uri=${redirect_uri}`;
 
-    if(!localStorage.getItem('accessToken') || localStorage.getItem('accessToken') == null || localStorage.getItem('accessToken') == undefined || localStorage.getItem('accessToken') == "" || localStorage.getItem('accessToken') == "undefined"){
+    if(accessToken == null || accessToken == "" || accessToken == undefined){
         window.location.replace(redirect);
-    }else{
-        accessToken = localStorage.getItem('accessToken');
-
-        console.log(accessToken);
     }
+
+    refreshQueuePlaylist();
 
    //Search button click
    $('#submit-search').click(function(){
@@ -104,6 +106,15 @@ $( document ).ready(function() {
        });
    });
 
+   //add song to private queues playlist for later viewing 
+   function addTrackToPlaylist(trackID){
+    $.ajax({
+        type: 'POST',
+        url: 'https://api.spotify.com/v1/playlists/2JDdTHWdW0Ak5zjFAIOspn/tracks?uris=spotify%3Atrack%3A'+trackID,
+        headers: {'Authorization': "Bearer " + accessToken}
+    });
+}
+
    //Add selected track to the current user's queue
    $(document).on('click touchend', '.track', function(){
     var id = $(this).attr('id');
@@ -114,7 +125,9 @@ $( document ).ready(function() {
     $.ajax({
         type: 'POST',
         url:'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A'+id,
-        headers: {'Authorization': "Bearer " + accessToken},
+        headers: {
+            'Authorization' : 'Bearer ' + accessToken
+        },
         success: function(data) {
             $('#'+id).find('div.track-indicator').animate({
                 left: '+=350px'
@@ -135,6 +148,8 @@ $( document ).ready(function() {
             });
         });
         });
+
+        addTrackToPlaylist(id);
     }
     });
 });
@@ -146,5 +161,88 @@ $('#search-track').keypress(function(event){
         $('#submit-search').click();
     }
 });
+
+//Hide and show playlist of all songs ever queued
+$(document).on('click', '#queue-playlist-btn', function(){
+    if(toggleQueuePlaylist){
+        $('#queue-playlist-bar').animate({
+            'margin-left': '+=250px'
+        });
+        toggleQueuePlaylist = false;
+    }else if(!toggleQueuePlaylist){
+        $('#queue-playlist-bar').animate({
+            'margin-left': '-=250px'
+        });
+        toggleQueuePlaylist = true;
+    }
+});
+
+function refreshQueuePlaylist(){
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.spotify.com/v1/playlists/2JDdTHWdW0Ak5zjFAIOspn/',
+        headers: {'Authorization': "Bearer " + accessToken},
+        success: function(data){
+            $('#queue-playlist-bar').find('h1').text('Last updated: ' + (dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds())); 
+            $('.queue-playlist-track').remove();
+            var queryLength = data.tracks.items.length;
+            var count = 0;
+
+            while(count < queryLength){
+                var id = data.tracks.items[count].id;
+                var image = data.tracks.items[count].track.album.images[0].url;
+                var name = data.tracks.items[count].track.name;
+                var artistCount = data.tracks.items[count].track.artists.length;
+                var artists = '';
+
+                for(var i = 0; i < artistCount; i++){
+                    artists += (", " + data.tracks.items[count].track.artists[i].name);
+                }
+
+                var trackElement = document.createElement('div');
+                trackElement.className = 'queue-playlist-track'
+                trackElement.id = ('playlist-'+id);
+
+                trackElement.innerHTML = ("<img class='track-img' src='" + image + "'> <h1>" + name + "</h1> <h2>" + artists.substring(2) + "</h2>");
+
+                $('#queue-playlist-bar').prepend(trackElement);
+                count++;
+            }
+        }
+    });
+}
+
+//Handle refreshing queue playlist on pull down
+$('#queue-playlist-bar').on('mousedown', function(event){
+    mouseY = event.pageY;
+    startMouseY = mouseY;
+
+    $(document).mousemove(function(e){
+        if(e.pageY > mouseY){
+            var diff = e.pageY - startMouseY;
+            if(diff >= 200){
+                $(document).unbind('mousemove');
+                refreshQueuePlaylist();
+                $('#queue-playlist-bar').find('.queue-playlist-track').animate({
+                    top: diff + 'px'
+                });
+            }
+        }else{
+            $(document).unbind('mousemove');
+        }
+    });
+});
+
+$('#queue-playlist-bar').on('mouseup', function(){
+    $('#queue-playlist-bar').find('.queue-playlist-track').animate({'top': '0px'});
+    $(document).unbind('mousemove');
+});
+
+$('#queue-playlist-bar').on('mouseleave', function(){
+    $('#queue-playlist-bar').find('.queue-playlist-track').animate({'top': '0px'});
+    $(document).unbind('mousemove');
+});
+
+
 }); // End of document.ready
 
