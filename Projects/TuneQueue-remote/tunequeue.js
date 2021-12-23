@@ -29,7 +29,7 @@ $( document ).ready(function() {
             window.localStorage.setItem('accessKey', snapshot.val());
             accessToken = localStorage.getItem('accessKey');
         } else {
-            console.error('Snapshot does not exist! Try refreshing the page...')
+            accessToken = localStorage.getItem('accessKey');
         }
       }).catch((error) => {
         console.error(error);
@@ -38,6 +38,7 @@ $( document ).ready(function() {
 
    //Search button click
    $('#submit-search').click(function(){
+        $('.track').remove();
        var searchString = $('#search-track').val();
        var searchQuery = encodeURI(searchString);
 
@@ -48,7 +49,6 @@ $( document ).ready(function() {
             'Authorization' : 'Bearer ' + accessToken
         },
         success: function(data) {
-            $('.track').remove();
             var queryLength = data.tracks.items.length;
             var count = 0;
             const queryMax = 20;
@@ -104,6 +104,7 @@ $( document ).ready(function() {
                 left: '-350px',
                 opacity: 1
             });
+
             $('.track').animate({
                 opacity: 0
             }, function(){
@@ -138,13 +139,13 @@ $(document).on({
         $('#loading-icon').css('display','block').promise().done(function(){
             $("#loading-icon").animate({
                 opacity: 1
-            }, 200);
+            }, 400);
         });
     },
     ajaxStop: function(){
         $('#loading-icon').animate({
             opacity: 0
-        }, 200).promise().done(function(){
+        }, 400).promise().done(function(){
             $('#loading-icon').css('display','none');
         });
     }

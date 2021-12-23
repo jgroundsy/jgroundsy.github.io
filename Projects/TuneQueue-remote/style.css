@@ -10,16 +10,12 @@ html{
 #loading-icon{
     width: 75px;
     height: 75px;
-    position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    top: 35%;
-    left: 49%;
-    margin-left: -37.5px;
-    margin-top: -37.5px;
     background-image: url('/images/loading.svg');
     display: none;
     opacity: 0;
+    z-index: 2;
 }
 
 #header{
@@ -72,23 +68,6 @@ html{
     cursor: pointer;
 }
 
-#error-msg{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: 20px;
-    margin-left: -150px;
-    margin-top: -10px;
-    color: red;
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    pointer-events: none;
-    user-select: none;
-    z-index: 2;
-    display: none;
-    opacity: 0;
-}
 
 .track{
     font-family: 'Montserrat', sans-serif;
@@ -100,7 +79,7 @@ html{
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    transition: background-color 300ms ease-in-out;
+    transition: background-color  300ms ease-in-out;
     z-index: 0;
     opacity: 1;
     cursor: pointer;
