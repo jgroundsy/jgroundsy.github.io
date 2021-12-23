@@ -3,6 +3,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-
 import {getDatabase, ref, set, child, update, remove, get} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"
 
 $( document ).ready(function() {
+    var accessToken;
     //FIREBASE INITIALIZATION
           
     const firebaseConfig = {
@@ -25,19 +26,15 @@ $( document ).ready(function() {
 
     get(child(dbRef, 'accessKey')).then((snapshot) => {
         if (snapshot.exists()) {
-          window.localStorage.setItem('accessKey', snapshot.val());
+            window.localStorage.setItem('accessKey', snapshot.val());
+            accessToken = localStorage.getItem('accessKey');
         } else {
-            //error
+            console.error('Snapshot does not exist! Try refreshing the page...')
         }
       }).catch((error) => {
         console.error(error);
       });
     //END FIREBASE INITIALIZATION 
-
-    var toggleHistory = false;
-
-   // Get Access Token
-   var accessToken = localStorage.getItem('accessKey');
 
    //Search button click
    $('#submit-search').click(function(){
@@ -134,5 +131,24 @@ $('#search-track').keyup(function(event){
         $('#submit-search').click();
     }
 });
- }); // End of document.ready
+
+//Handle loading icon for the various ajax events
+$(document).on({
+    ajaxStart: function(){
+        $('#loading-icon').css('display','block').promise().done(function(){
+            $("#loading-icon").animate({
+                opacity: 1
+            }, 200);
+        });
+    },
+    ajaxStop: function(){
+        $('#loading-icon').animate({
+            opacity: 0
+        }, 200).promise().done(function(){
+            $('#loading-icon').css('display','none');
+        });
+    }
+});
+
+}); // End of document.ready
 

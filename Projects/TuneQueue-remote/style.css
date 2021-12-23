@@ -7,6 +7,21 @@ html{
     overflow-x: hidden;
 }
 
+#loading-icon{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 35%;
+    left: 49%;
+    margin-left: -37.5px;
+    margin-top: -37.5px;
+    background-image: url('/images/loading.svg');
+    display: none;
+    opacity: 0;
+}
+
 #header{
     font-weight: bold;
     color: #1db954;
