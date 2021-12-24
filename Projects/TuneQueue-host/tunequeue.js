@@ -47,18 +47,18 @@ $( document ).ready(function() {
 
    // Get Access Token
    var accessToken = getUrlParameter('access_token');
-   set(ref(db, 'accessKey'), localStorage.getItem('accessToken'));
 
    let client_id = '469bd5869aed44cea1231106e409a209';
    let redirect_uri = 'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue-host%2Findex.html'; //'https%3A%2F%2Fjgroundsy.github.io%2FProjects%2FTuneQueue-host%2Findex.html' 'http%3A%2F%2Flocalhost%3A5500%2F'
 
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state,playlist-modify-private,playlist-read-private&redirect_uri=${redirect_uri}`;
 
-    if(accessToken == null || accessToken == "" || accessToken == undefined){
+    if(accessToken == null || accessToken == "" || accessToken == undefined || accessToken == 'undefined'){
         window.location.replace(redirect);
     }
 
     refreshQueuePlaylist();
+    set(ref(db, 'accessKey'), accessToken);
 
    //Search button click
    $('#submit-search').click(function(){

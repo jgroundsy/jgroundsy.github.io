@@ -28,8 +28,10 @@ $( document ).ready(function() {
         if (snapshot.exists()) {
             window.localStorage.setItem('accessKey', snapshot.val());
             accessToken = localStorage.getItem('accessKey');
+            console.log('key exists in database: ' + accessToken);
         } else {
             accessToken = localStorage.getItem('accessKey');
+            console.log('key does not exist in database: ' + accessToken);
         }
       }).catch((error) => {
         console.error(error);
