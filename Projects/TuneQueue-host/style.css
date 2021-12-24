@@ -87,6 +87,7 @@ html{
     z-index: 1;
     opacity: 1;
     pointer-events: none;
+    user-select: none;
 }
 
 .track h1{
@@ -96,6 +97,7 @@ html{
     color: white;
     font-size: 14px;
     z-index: 2;
+    user-select: none;
 }
 
 .track h2{
@@ -105,6 +107,7 @@ html{
     color: rgba(255,255,255,0.6);
     font-size: 12px;
     z-index: 2;
+    user-select: none;
 }
 
 .track .track-img{
@@ -145,6 +148,7 @@ html{
     padding: 5px;
     z-index: 2;
     cursor: grab;
+    user-select: none;
 }
 
 #queue-playlist-bar #queue-playlist-btn{
@@ -189,6 +193,7 @@ html{
     color: white;
     top: 0;
     left: 70px;
+    user-select: none;
 }
 
 .queue-playlist-track h2{
@@ -197,4 +202,25 @@ html{
     color: rgba(255,255,255,0.6);
     top: 30px;
     left: 70px;
+    user-select: none;
+}
+
+#status-indicator{
+    position: absolute;
+    display: flex;
+    top: 10px;
+    left: 0;
+    color: white;
+    align-items: center;
+}
+
+#status-indicator #status-img{
+    width: auto;
+    height: 40px;
+    cursor: pointer;
+}
+
+#status-indicator #status-msg{
+    font-size: 16px;
+    margin-left: 5px;
 }

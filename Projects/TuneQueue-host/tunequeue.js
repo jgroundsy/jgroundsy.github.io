@@ -16,7 +16,6 @@ $( document ).ready(function() {
         measurementId: "G-41D8NGBHD8"
     };
           
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
@@ -54,7 +53,10 @@ $( document ).ready(function() {
    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&scope=user-modify-playback-state,playlist-modify-private,playlist-read-private&redirect_uri=${redirect_uri}`;
 
     if(accessToken == null || accessToken == "" || accessToken == undefined || accessToken == 'undefined'){
+        changeAuthenticationStatus(false, false);
         window.location.replace(redirect);
+    }else{
+        changeAuthenticationStatus(true, false);
     }
 
     refreshQueuePlaylist();
@@ -242,6 +244,33 @@ $('#queue-playlist-bar').on('mouseleave', function(){
     $('#queue-playlist-bar').find('.queue-playlist-track').animate({'top': '0px'});
     $(document).unbind('mousemove');
 });
+
+$('#status-img').on('click', function(){
+    if($('#status-msg').text() == 'Authenticated'){
+        changeAuthenticationStatus(false, false);
+    }else if($('#status-msg').text() == 'Unauthenticated'){
+        changeAuthenticationStatus(true, true);
+    }
+});
+
+function changeAuthenticationStatus(status, reload){
+    if(status == true){
+        if(reload == true){
+            window.location.replace(redirect);
+        }
+
+        if(reload == false){
+            $('#status-img').attr('src','images/authenticated.png');
+            $('#status-msg').text('Authenticated');
+        }
+    }
+
+    if(status == false){
+        set(ref(db, 'accessKey'), '0');
+        $('#status-img').attr('src','images/unauthenticated.png');
+        $('#status-msg').text('Unauthenticated');
+    }
+}
 
 
 }); // End of document.ready
