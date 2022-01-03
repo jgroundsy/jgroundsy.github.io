@@ -38,6 +38,11 @@ $( document ).ready(function() {
 
    //Search button click
    $('#submit-search').click(function(){
+
+    //zoomout to initial device screen size after searching for a track
+    $("meta[name='viewport']").attr('content', 'width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0');
+    $(window).resize();
+
         $('.track').remove();
        var searchString = $('#search-track').val();
        var searchQuery = encodeURI(searchString);
