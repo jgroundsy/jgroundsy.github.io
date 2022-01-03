@@ -13,9 +13,12 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('/images/loading.svg');
+}
+
+#loading-icon-wrapper{
     display: none;
     opacity: 0;
-    z-index: 2;
+    margin: 0 auto;
 }
 
 #header{
@@ -68,13 +71,21 @@ html{
     cursor: pointer;
 }
 
+#track-list{
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    top: 19em;
+    left: 50%;
+}
+
 
 .track{
     font-family: 'Montserrat', sans-serif;
     background-color: #191414;
-    width: 500px;
+    width: 100%;
     height: 150px;
-    margin: 0 auto; 
     margin-bottom: 10px;
     position: relative;
     border-radius: 10px;
@@ -106,17 +117,19 @@ html{
     top: 5px;
     left: 160px;
     color: white;
-    font-size: 14px;
+    font-size: .8em;
     z-index: 2;
+    text-align: left;
 }
 
 .track h2{
     position: absolute;
-    top: 35px;
+    top: 90px;
     left: 160px;
     color: rgba(255,255,255,0.6);
-    font-size: 12px;
+    font-size:  .6em;
     z-index: 2;
+    text-align: left;
 }
 
 .track .track-img{

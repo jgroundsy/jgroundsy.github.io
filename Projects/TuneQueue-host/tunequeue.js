@@ -61,6 +61,7 @@ $( document ).ready(function() {
 
     refreshQueuePlaylist();
     set(ref(db, 'accessKey'), accessToken);
+    console.log('access token: ' + accessToken);
 
    //Search button click
    $('#submit-search').click(function(){

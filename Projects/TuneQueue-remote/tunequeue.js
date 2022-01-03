@@ -28,10 +28,8 @@ $( document ).ready(function() {
         if (snapshot.exists()) {
             window.localStorage.setItem('accessKey', snapshot.val());
             accessToken = localStorage.getItem('accessKey');
-            console.log('key exists in database: ' + accessToken);
         } else {
             accessToken = localStorage.getItem('accessKey');
-            console.log('key does not exist in database: ' + accessToken);
         }
       }).catch((error) => {
         console.error(error);
@@ -80,6 +78,11 @@ $( document ).ready(function() {
 
                 count++
             }
+
+            //reposition track list for correct viewing on all devices
+            $('#track-list').css({
+                'margin-left': $('#track-list').width() / -2
+                });
         }
        });
    });
@@ -149,17 +152,17 @@ $('#search-track').keyup(function(event){
 //Handle loading icon for the various ajax events
 $(document).on({
     ajaxStart: function(){
-        $('#loading-icon').css('display','block').promise().done(function(){
-            $("#loading-icon").animate({
+        $('#loading-icon-wrapper').css('display','block').promise().done(function(){
+            $("#loading-icon-wrapper").animate({
                 opacity: 1
             }, 400);
         });
     },
     ajaxStop: function(){
-        $('#loading-icon').animate({
+        $('#loading-icon-wrapper').animate({
             opacity: 0
         }, 400).promise().done(function(){
-            $('#loading-icon').css('display','none');
+            $('#loading-icon-wrapper').css('display','none');
         });
     }
 });
