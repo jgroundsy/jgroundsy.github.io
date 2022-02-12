@@ -1,98 +1,125 @@
-<!DOCTYPE html>
+<html>
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
+<head>
+    <meta charset='utf-8'>
+    <title>Jared Grounds: Home</title>
+    <meta name='description' content='Online Portfolio'>
+    <meta name='author' content='Jared Grounds'>
+    <link rel="stylesheet" href="master.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200&display=swap');
+    </style>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+</head>
 
-        <title>Jared Grounds: Home</title>
-        <meta name="description" content="Portfolio">
-        <meta name="author" content="Jared Grounds">
+<body>
+    <!--Nav-->
+    <div id='navbar' class='no-select'>
+        <a id='a-contact' href='#contact'>Contact</a>
+        <a id='a-projects' href='#projects'>Projects</a>
+        <a id='a-home' href='#home'>Home</a>
+        <img src='images/favicon-new.png'>
+    </div>
 
-        <link rel="stylesheet" href="css/master.css">
-
-        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"> 
-        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
-
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="/scripts/loadEssentials.js"></script>
-    </head>
-
-    <body>
-        <div class="navbar"></div>
-
-        <div class="main">
-            <div id="header"> <!--Heading-->
-                <h1>Jared Grounds</h1>
-                <h4>Web Programmer & Designer</h4>
-                <br>
-                <button onclick="window.location.href = '/Projects/';">View Projects</button>
-                <br>
-                <br>
-                <br>
-                <div class="sociallinks"> <!--Social Media Links-->
-                    <span id="facebook" onclick="window.open('https://www.facebook.com/jrodg1')"></span>
-                    <span id="github" onclick="window.open('https://github.com/jgroundsy')"></span>
-                    <span id="linkedin" onclick="window.open('https://www.linkedin.com/in/jaredgrounds/')"></span>
-                    <span id="discord" onclick="window.open('https://www.discordapp.com/users/694933831123337286')"></span>
-                </div>
+    <!--Home-->
+    <div id='home' class='scroll-snap'>
+        <div id="header" class='no-select'>
+            <h1>Jared Grounds</h1>
+            <h2>Web Developer</h2>
+            <div id="socials">
+                <img id='linkedin' class='social-icon' src='images/socials/linkedin.png'
+                    onclick="window.open('https://www.linkedin.com/in/jaredgrounds/')" />
+                <img id='github' class='social-icon' src='images/socials/github.png'
+                    onclick="window.open('https://github.com/jgroundsy/')" />
+                <img id='discord' class='social-icon' src='images/socials/discord.png'
+                    onclick="window.open('https://www.discordapp.com/users/694933831123337286')" />
             </div>
-
-            <div class="knowledge"> <!--Skill Bars-->
-                <h1>Knowledge</h1>
-                <h4>Based on current experience</h4>
-
-                <div class="skills" id="left">
-                    <h2>HTML</h2>
-                    <div class="skillbar-container" id="html">
-                        <div class="skillbar-fill" id="html"></div>
-                    </div>
-
-                    <h2>CSS</h2>
-                    <div class="skillbar-container" id="css">
-                        <div class="skillbar-fill" id="css"></div>
-                    </div>
-
-                    <h2>JS</h2>
-                    <div class="skillbar-container" id="js">
-                        <div class="skillbar-fill" id="js"></div>
-                    </div>
-
-                    <h2>PHP</h2>
-                    <div class="skillbar-container" id="php">
-                        <div class="skillbar-fill" id="php"></div>
-                    </div>
-                </div>
-
-                <div class="skilldesc">
-                    <p> Don't worry! As I continue learning more about web development and design, these skill-meters will persistently increase. Take a look at the projects I've completed in order to view how I've utilized these various skills.</p>
-                </div>
-
-                <div class="skills" id="right">
-                    <h2>Photoshop</h2>
-                    <div class="skillbar-container" id="photoshop">
-                        <div class="skillbar-fill" id="photoshop"></div>
-                    </div>
-
-                    <h2>Illustrator</h2>
-                    <div class="skillbar-container" id="illustrator">
-                        <div class="skillbar-fill" id="illustrator"></div>
-                    </div>
-
-                    <h2>Dreamweaver</h2>
-                    <div class="skillbar-container" id="dreamweaver">
-                        <div class="skillbar-fill" id="dreamweaver"></div>
-                    </div>
-
-                    <h2>Figma</h2>
-                    <div class="skillbar-container" id="figma">
-                        <div class="skillbar-fill" id="figma"></div>
-                    </div>
-                </div>
+        </div>
+        <a href='#projects'>
+            <div class="arrow-wrapper">
+                <p class='arrow-text bottom'>Projects</p>
+                <img id='next-arrow' src='images/arrow.png'>
             </div>
+        </a>
+    </div>
 
-        <footer></footer>
+    <!--Projects-->
+    <div id='projects' class='scroll-snap'>
+        <!-- <h1 class='section-header'>Projects</h1> -->
+        <iframe id='project-iframe' src=''></iframe>
+        <p id='project-close'><span>&#10005;</span> Close</p>
+        <div id="carousel-container">
+            <a class='prev no-select' onclick='moveCarousel(-1)'>&#10094</a>
+            <a class='next no-select' onclick='moveCarousel(1)'>&#10095</a>
 
+            <div id='carousel-dots'><span class='dot' onclick='displayItem(1)'></span></div>
 
-    </body>
+            <div id='grid-1' class='carousel-item project-grid'></div>
+        </div>
+    </div>
+
+    <!--Contact-->
+    <div id='contact' class='scroll-snap'>
+        <div id="form-container">
+            <h1>Any questions?</h1>
+            <h2>Submit them here!</h2>
+            <form action='https://formspree.io/f/xrgjpega' method='post'>
+                <input id='form-name' type='text' name='name' required='' placeholder='Name'><br>
+                <input type='text' name='email' id='form-email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+                    title='Enter a valid e-mail address' required='' placeholder='E-mail Address'><br>
+                <input id='form-subject' type='text' name='subject' required='' placeholder='Subject'><br>
+                <textarea id='form-message' name='message' required='' rows='10' maxlength='256'
+                    placeholder='Message'></textarea>
+                <p id='contact-chars'>Characters left: 256</p><br>
+                <input type='submit' value='Send Message'>
+            </form>
+        </div>
+    </div>
+
+    <script src='js/p5.min.js'></script>
+    <script src='js/jquery-3.6.0.min.js'></script>
+    <script src='js/perlin.js'></script>
+    <script src='js/viewProjects.js'></script>
+    <script src='js/carousel.js'></script>
+
+    <script>
+        $(document).ready(function () {
+            var charCount = $('#form-message').val().length;
+            $('#contact-chars').html('Characters left: ' + (256 - charCount));
+            $('#form-message').on('input', function () {
+                charCount = $('#form-message').val().length;
+                $('#contact-chars').html('Characters left: ' + (256 - charCount));
+            })
+        });
+    </script>
+
+    <script>
+        $(document).on('mouseenter', '.tool', function () {
+            $('#' + $(this).parent().attr('id')).find('#tooltext-' + $(this).attr('id').split('-')[1]).show();
+        }).on('mouseleave', '.tool', function () {
+            $('#' + $(this).parent().attr('id')).find('#tooltext-' + $(this).attr('id').split('-')[1]).hide();
+        });
+    </script>
+
+    <script>
+        $(window).scroll(function () {
+            clearTimeout($.data(this, 'scrollTimer'));
+            $.data(this, 'scrollTimer', setTimeout(function () {
+                for (let i = 0; i < $(document).find('.scroll-snap').length; i++) {
+                    var currentElement = $(document).find('.scroll-snap')[i];
+                    $('#a-' + currentElement.id).css({
+                        color: 'rgba(255,255,255,0.5)'
+                    });
+
+                    if (Math.abs(currentElement.getBoundingClientRect().top == 0)) {
+                        $('#a-' + currentElement.id).css({
+                            color: 'rgba(255,255,255,1)'
+                        });
+                    }
+                }
+            }));
+        });
+    </script>
+</body>
+
 </html>
-

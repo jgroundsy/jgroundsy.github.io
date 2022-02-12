@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Zero-Day</title>
+        <link rel="stylesheet" href="master.css">
+        <link href="https://fonts.cdnfonts.com/css/sf-pixelate" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon-128.png" type="image/png">
+    </head>
+    <body>
+
+        <div id="popup">
+            <img src='images/adb.png'>
+            <h1>JG:> adblock_note.txt</h1>
+            <p id='popup-text'></p>
+            <a href='#' id='popup-btn'>Okay!</a>
+        </div>
+
+        <div id="curtain"></div>
+
+        <img src='images/logo.gif' id='logo'>
+
+        <p id='description' class='game-text'>A zero-day exploit has been discovered for your software. You must eliminate harmful bugs, in your code, and release patches. These bugs will become more difficult after each patch.</p>
+        <p id="controls" class="game-text">Movement: <span class="colored-text">WASD</span> Shoot: <span class="colored-text">Left-click</span></p>
+        
+        <div id="game-container">
+            <div id="wave-alert" class='crt'>
+                <h1 id='wave-alert-text' class='game-text'>Wave Incoming...</h1>
+            </div>
+
+            <div id='stats' class='game-text crt'>
+                <h1 id='wave-text'>v1.0.<span id='wave-count' class='colored-text'>0</span></h1>
+                <h2 id='bug-text'>Bugs: <span id='bug-count' class='colored-text'>0</span></h2>
+                <div id='stats-btn'>SHOW</div>
+                <h3 id='total-bullets-text'>Total bullets: <span id='total-bullets-count' class='colored-text'>0</span></h3>
+                <h3 id='bullets-hit-text'>Bullets hit: <span id='bullets-hit-count' class='colored-text'>0</span></h3>
+                <h3 id='current-accuracy-text'>Accuracy: <span id='current-accuracy-count' class='colored-text'>0%</span></h3>
+                <h3 id='total-bugs-text'>Total bugs: <span id='total-bugs-count' class='colored-text'>0</span></h3>
+                <h3 id='bugs-killed-text'>Bugs killed: <span id='bugs-killed-count' class='colored-text'>0</span></h3>
+            </div>
+    
+            <div id="game-map" class='crt'>
+            </div>
+
+            <div id='leaderboard' class='crt'>
+                <h1>GAME OVER!</h1>
+                <h2 id='patch-text'>Patch: v1.0.<span id='patch-count' class='colored-text'>1</span> </h2>
+                <h2 id='accuracy-text'>Accuracy: <span id='accuracy-count' class='colored-text'>0</span>%</h2>
+                <table id='leaderboard-table'>
+                    <thead>
+                        <tr>
+                            <th><span class="colored-text">NAME</span></th>
+                            <th><span class="colored-text">PATCH</span></th>
+                            <th><span class="colored-text">ACCURACY</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id='leaderboard-table-body'>
+                        <tr>
+                            <td>---</td>
+                            <td>------</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>---</td>
+                            <td>------</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>---</td>
+                            <td>------</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>---</td>
+                            <td>------</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>---</td>
+                            <td>------</td>
+                            <td>---</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="initials-text">
+                    <h3>ENTER INITIALS!</h3>
+                    <p id='initials-error-text' class='colored-text'></p>
+                    <input type='text' id='initial1' name='initial1' class='initials' maxlength='1' onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)'>
+                    <input type='text' id='initial2' name='initial2' class='initials' maxlength='1' onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)'>
+                    <input type='text' id='initial3' name='initial3' class='initials' maxlength='1' onkeypress='return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)'>
+                    <button id='send-initials-btn' onClick="saveToLeaderboard();">ENTER</button>
+                </div>
+                <button id="continue-leaderboard-btn" class='game-text' onClick="location.reload();">Continue ></button>
+            </div>
+        </div>
+
+        <button id='start-btn' class="neon-btn game-text" onClick="startGame();">Start ></button>
+
+        <script src='js/jquery-3.6.0.min.js'></script>
+        <script src='js/jquery.animateSprite.min.js'></script>
+        <script src='js/index.umd.js'></script>
+        <script src='js/game.js'></script>
+
+        <script>
+            $(document).ready(function(){
+                window.scrollTo(0,0);
+                $("#curtain").animate({"opacity" : .8})
+                $("#popup").animate({top: "+65%"});
+
+                $("#popup-btn").click(function(event){
+                    event.preventDefault();
+                    $("#popup").animate({top: "-65%"});
+                    $("#curtain").animate({"opacity" : "0"});
+
+                    $("#curtain").promise().done(function(){
+                        $("#curtain").css("display","none");
+                    });
+
+                    $('body').css("overflow","visible");
+                });
+
+                new TypeIt("#popup-text", {
+                strings: [
+                    'If you are running an ad-blocker, please disable it.<br>',
+                    'The plugin may confuse certain game elements with ads and remove them.'
+                ],
+                speed: 50,
+                    waitUntilVisible: true,
+                }).go();
+
+                $(document).on('mouseenter', '#popup-btn', function(){
+                    $('#popup-btn').css({
+                        color: '#000000',
+                        'background-color': '#ffffff',
+                        cursor: 'pointer'
+                    });
+                    $('#popup-btn').animate({opacity: '1.0'}, 200);
+
+                }).on('mouseleave', '#popup-btn', function(){
+                    $('#popup-btn').css({
+                        color: '#ffffff',
+                        'background-color': '#000000',
+                        cursor: 'default'
+                    });
+                    $('#popup-btn').animate({opacity: '0.5'}, 200);
+                });
+            });
+        </script> 
+    </body>
+</html>

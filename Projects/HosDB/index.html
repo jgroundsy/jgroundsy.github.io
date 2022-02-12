@@ -1,101 +1,83 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
 
-        <title>Jared Grounds: HosDB</title>
-        <meta name="description" content="Portfolio">
-        <meta name="author" content="Jared Grounds">
+<head>
+    <meta charset='utf-8'>
+    <title>Jared Grounds: HosDB</title>
+    <meta name='description' content='HosDB'>
+    <meta name='author' content='Jared Grounds'>
+    <link rel="stylesheet" href="../doc.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200&display=swap');
+    </style>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+</head>
 
-        <link rel="stylesheet" href="/css/hosdb.css">
-        <link rel="stylesheet" href="/css/picModal.css">
-
-        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"> 
-        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
-
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="/scripts/loadEssentials.js"></script>
-        <script src="/scripts/picModal.js"></script>
-    </head>
-
-    <body>
-
-        <div class="navbar"></div>
-
-        <div class="main">
-            <div id="header"> <!--Heading-->
-                <h1>HosDB</h1>
-                <h4>All-in-one Hospital Patient Database.</h4>
-                <div class="desc">
-                    After conducting many, different ethnographic interviews regarding patient-care at small hospitals, my TECH120
-                    group and I created a solution for easy, efficient patient management. Programmed using Microsoft Visual Basic.
-                </div>
-                <h6>Last update: December 2nd, 2019</h6>
-                <button onclick="window.open('/Projects/HosDB/files/Design-Journal.pdf')"><img src="/images/projects/download_icon.png">Download</button>
-            </div>
-            
-            <div class="content">
-                <iframe src="/Projects/HosDB/files/Design-Journal.pdf"></iframe>
-                <div class="title">
-                    <h2>Overview</h2>
-                </div>
-                <div class="details">
-                    <h4>Team Members: </h4><span>Jared Grounds, Michael Rosswurm, and Adnane Sentoussi</span><br><br>
-                    <h4>Global Challenge: </h4><span>Health Informatics</span><br><br>
-                    <h4>Problem Statement: </h4><span>Health professionals, practitioners, patients and local governments <b>need</b> a secure, online patient-database <b>because</b> current hospital databases can be unprotected at times, and are often difficult for medical professionals to use.</span><br><br>
-                    <h4>Our solution: </h4><span>An all-in-one patient database. This allows practitioners to easily enter in basic patient info, additional notes, and their billing statement. Hospital administrators can also view any changes made to patient files, migrate files from one employee to another, and much more.</span><br><br>
-                </div>
-
-                <div class="images">
-                    <img src="/Projects/HosDB/files/login.PNG" onclick="openModal();currentSlide(1)" class="hover-shadow"> 
-                    <img src="/Projects/HosDB/files/patient.PNG" onclick="openModal();currentSlide(2)" class="hover-shadow"> 
-                    <img src="/Projects/HosDB/files/changelog.PNG" onclick="openModal();currentSlide(3)" class="hover-shadow"> 
-                </div>
-
-                <div id="picModal" class="modal">
-                    <span class="closeIcon" onclick="closeModal()">&times;</span>
-                    <div class="modal-content">
-
-                        <div class="picSlides">
-                            <div class="numIcon">1 / 3</div>
-                            <img class="fulldisplay" src="/Projects/HosDB/files/login.PNG">
-                        </div>
-
-                        <div class="picSlides">
-                            <div class="numIcon">2 / 3</div>
-                            <img class="fulldisplay" src="/Projects/HosDB/files/patient.PNG">
-                        </div>
-
-                        <div class="picSlides">
-                            <div class="numIcon">3 / 3</div>
-                            <img class="fulldisplay" src="/Projects/HosDB/files/changelog.PNG">
-                        </div>
-
-                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-
-                        <div class="caption-container">
-                            <p id="caption"></p>
-                        </div>
-
-                        <div class="modalColumn">
-                            <img class="thumbnail" src="/Projects/HosDB/files/login.PNG" onclick="currentSlide(1)" alt="Practitioner Login">
-                        </div>
-
-                        <div class="modalColumn">
-                            <img class="thumbnail" src="/Projects/HosDB/files/patient.PNG" onclick="currentSlide(2)" alt="User's patient list">
-                        </div>
-
-                        <div class="modalColumn">
-                            <img class="thumbnail" src="/Projects/HosDB/files/changelog.PNG" onclick="currentSlide(3)" alt="Clinic administrator's activity-monitor">
-                        </div>
-                    </div>
-                </div>
+<body>
+    <br><br><br><br>
+    <div class="page-container">
+        <h1>HosDB</h1>
+        <h2>AIO Hospital Patient Database</h2>
+        <button class='view-btn' onclick="window.open('https://github.com/jgroundsy/HosDB')"><img class='btn-img'
+                src='/images/socials/github.png'><span class="btn-text">View on
+                Github</span></button>
+        <div class="description-wrapper">
+            <p><span class='text-section'>Team Members: </span>Jared Grounds, Michael Rosswurm, and Adnane Sentoussi</p>
+            <p><span class='text-section'>Global Challenge: </span>Health Informatics</p>
+            <p><span class='text-section'>Problem Statement: </span>Health professionals, practitioners, patients, and
+                local
+                governments
+                <span class='text-emphasis'>need</span> a secure, online patient-database <span
+                    class='text-emphasis'>because</span> current hospital databases can be
+                unprotected at times, and are often difficult for medical professionals to use.
+            </p>
+            <p><span class='text-section'>Our solution: </span>An all-in-one patient-database. This allows practitioners
+                to
+                easily enter basic
+                patient info, additional notes, and their billing statement. Hospital administrators can also monitor
+                employee activity.</p>
         </div>
 
-        <footer></footer>
+        <iframe class='document' src='files/doc.pdf'></iframe>
+        <div class="images">
+            <div class="img-row">
+                <div class="img-col">
+                    <img src='files/login.PNG'>
+                </div>
+                <div class="img-col">
+                    <img src='files/basic.png'>
+                </div>
+                <div class="img-col">
+                    <img src='files/more.png'>
+                </div>
+                <div class="img-col">
+                    <img src='files/notes.png'>
+                </div>
+                <div class="img-col">
+                    <img src='files/billing.png'>
+                </div>
+            </div>
 
-    </body>
+            <div class="img-row">
+                <div class="img-col">
+                    <img src='files/admin.png'>
+                </div>
+                <div class="img-col">
+                    <img src='files/employee.png'>
+                </div>
+                <div class="img-col">
+                    <img src='files/changelog.png'>
+                </div>
+                <div class="img-col">
+
+                </div>
+                <div class="img-col">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+</body>
+
 </html>
-

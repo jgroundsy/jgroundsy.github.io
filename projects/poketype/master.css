@@ -1,0 +1,361 @@
+/**General Page Styling**/
+
+body{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Lexend Deca';
+    background: url("./images/background.png") no-repeat fixed;
+    background-position: bottom;
+    background-color: rgba(64, 164, 30, 0.6);
+    background-size: cover;
+    background-blend-mode: screen;
+    transition: background-color .25s;
+    overflow: hidden;
+}
+
+#overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+#nav-content-wrapper{
+    height: 50px;
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+#nav-content-wrapper:hover{
+    cursor: pointer;
+}
+
+#navbar{
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    z-index: 1;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0,0, 0, 1);
+}
+
+#navbar img{
+    height: 50px;
+    height: 50px;
+    float: left;
+}
+
+#navbar a{
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+#main-content{
+    padding-top: 65px;
+}
+
+/**Slider Styling**/
+
+.image_wrapper .typeimg{
+    width: 642px;
+    height: 252px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+}
+
+.container{
+    display: block;
+    width: 655px;
+    height: 265px;
+    margin: 20px auto 80px auto;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0, 0, 1);
+}
+
+.image_wrapper{
+    width: 642px;
+    height: 252px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.prev, .next{
+    width: 30px;
+    height: 59px;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.prev{
+    background: transparent url("./images/prev.png") no-repeat top center;
+    left: 20px;
+}
+
+.next{
+    background: transparent url("./images/next.png") no-repeat top center;
+    right: 20px;
+}
+
+.prev:hover, .next:hover{
+    opacity: 0.9;
+}
+
+ul.nav{
+    list-style: none;
+    padding: 0;
+    width: 323px;
+    margin: 20px auto;
+    position: relative;
+}
+
+ul.nav li{
+    float: left;
+}
+
+ul.nav li a{
+    display: block;
+    text-indent: -9000px; /*remove li text from the screen*/
+    width: 13px;
+    height: 13px;
+    outline: none;
+    padding: 0px 3px;
+    background: transparent url("./images/dot2.png") no-repeat top center;
+}
+
+ul.nav li a:hover, ul.nav li.selected a{
+    background-position: 50% -13px;
+}
+
+ul.nav li.preview{
+    display: none;
+    width: 85px;
+    height: 91px;
+    top: -95px;
+    left: -34.5px;
+    position: absolute;
+}
+
+ul.nav li.preview span{
+    background: transparent url("./images/triangle.png") no-repeat top center;
+    width: 15px;
+    height: 6px;
+    position: absolute;
+    top: 85px;
+    left: 35px;
+}
+
+.preview-wrapper{
+    width: 73px;
+    height: 29px;
+    border: 5px solid #fff;
+    overflow: hidden;
+    position: relative;
+    -moz-box-shadow: 0px 0px 5px #999;
+    -webkit-box-shadow: 0px 0px 5px #999;
+    box-shadow: 0px 0px 5px #999;
+    top: 48px;
+}
+
+.preview-wrapper img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#type2{
+    left: 644px;
+}
+
+#type3{
+    left: 1288px;
+}
+
+#type4{
+    left: 1932px;
+}
+#type5{
+    left: 2576px;
+}
+#type6{
+    left: 3220px;
+}
+#type7{
+    left: 3864px;
+}
+#type8{
+    left: 4508px;
+}
+#type9{
+    left: 5152px;
+}
+#type10{
+    left: 5796px;
+}
+#type11{
+    left: 6440px;
+}
+#type12{
+    left: 7084px;
+}
+#type13{
+    left: 7728px;
+}
+#type14{
+    left: 8372px;
+}
+#type15{
+    left: 9016px;
+}
+#type16{
+    left: 9660px;
+}
+#type17{
+    left: 10304px;
+}
+
+li.prevNav{}
+
+/**Pokemon Content Styling**/
+#pokemon-list-wrapper{
+    opacity: 1.0;
+}
+
+.poke-num{
+    position: absolute;
+    z-index: 1;
+    top: -15px;
+    left: 8px;
+    font-size: 1em;
+    color: rgb(133, 133, 133);
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+}
+
+.pokemon-container{
+    width: 250px;
+    height: 280px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+    margin-right: 10px;
+    margin-bottom: 35px;
+    display: inline-block;
+    opacity: 0.7;
+}
+
+.pokemon-img{
+    width: 225px;
+    height: 223px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.pokemon-type-wrapper{
+    border-bottom: 1px solid rgb(177, 177, 177);
+    padding: 5px;
+}
+
+.poke-text{
+    font-size: 1.2em;
+}
+
+.type-img{
+    width: 80px;
+    height: auto;
+    margin-bottom: -25px;
+}
+
+/**Ad Styling**/
+#popup{
+    position: absolute;
+    left: 50%;
+    top: -460px;
+    margin-top: -250px;
+    margin-left: -237.5px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    width: 500px;
+    height: 475px;
+    background-image: linear-gradient(120deg, #ffffff, #c9c9c9);
+    padding: 20px;
+    z-index: 2;
+}
+
+#popup h1{
+    font-size: 32px;
+    margin-top: -22px;
+}
+
+#popup h2{
+    font-size: 24px;
+    color: rgba(0,0,0,0.5);
+    margin-top: -22px;
+}
+
+#popup p{
+    margin-bottom: 25px;
+}
+
+#popup img{
+    width: 50%;
+    height: auto;
+}
+
+.btn{
+    padding: 10px 25px 10px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+#donate-btn1{
+    background-image: linear-gradient(60deg, #ff4845, #e82e21);
+}
+
+#donate-btn2{
+    background-image: linear-gradient(60deg, #ff9f45, #e87121);
+}
+
+#donate-btn3{
+    background-image: linear-gradient(60deg, #ffe345, #e8ba21);
+}
+
+#donate-btn4{
+    background-image: linear-gradient(60deg, #45ff45, #32e821);
+}
+
+.btn:hover{
+    transition: box-shadow .2s ease-in-out;
+    box-shadow: inset 0 0 0 100vmax rgba(255,255,255,0.5);
+}
+
+#popup-curtain{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    z-index: 1;
+}

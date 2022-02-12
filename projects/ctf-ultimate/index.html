@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CTF: Ultimate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+</head>
+
+<body>
+    <div class="btn-wrapper">
+        <button id='color1-btn' class='color-btn' onclick='getRandomColor(1);'>Color</button>
+        <label for='load-btn' class='file-hide'>
+            <input id='load-btn' class='btn' type='file' onchange='loadOverlay(this);'>
+            Load
+        </label>
+        <button id='clear-btn' class='clear-btn' onclick='clearOverlay();'>Clear</button>
+        <button id='color2-btn' class='color-btn' onclick='getRandomColor(2);'>Color</button>
+    </div>
+
+    <div class='crt'>
+        <canvas id='game'></canvas>
+    </div>
+    <script src='game.js'></script>
+</body>
+
+</html>

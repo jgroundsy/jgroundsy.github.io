@@ -1,0 +1,90 @@
+[
+    {
+        "title": "TuneQueue",
+        "subtitle": "API Implementation",
+        "description": "Remotely queue songs to a host device without the need for a Spotify account.",
+        "background_image": "/images/projects/tunequeue.png",
+        "last_update": "1/10/2022",
+        "tools": [
+            "html,HTML",
+            "css,CSS",
+            "js,JavaScript",
+            "jquery,jQuery",
+            "firebase,Firebase"
+        ],
+        "url": "../404.html"
+    },
+    {
+        "title": "Zero-day",
+        "subtitle": "Round-based Game",
+        "description": "A zero-day exploit has been discovered for your software. You must eliminate harmful bugs, in your code, and release patches.",
+        "background_image": "/images/projects/zero-day.png",
+        "last_update": "1/10/2022",
+        "tools": [
+            "html,HTML",
+            "css,CSS",
+            "js,JavaScript",
+            "jquery,jQuery"
+        ],
+        "url": "../projects/zero-day/index.html"
+    },
+    {
+        "title": "PokéType",
+        "subtitle": "Dynamic Webpage",
+        "description": "Sort and view Kanto region Pokémon by their type.",
+        "background_image": "/images/projects/poketype.png",
+        "last_update": "1/10/2022",
+        "tools": [
+            "html,HTML",
+            "css,CSS",
+            "js,JavaScript",
+            "jquery,jQuery"
+        ],
+        "url": "../projects/poketype/index.html"
+    },
+    {
+        "title": "C++ A* Algorithm",
+        "subtitle": "Pathfinding Algorithm",
+        "description": "Calculate the shortest path from start tile to end tile while avoiding obstacles.",
+        "background_image": "/images/projects/astaralgorithm.png",
+        "last_update": "11/16/2020",
+        "tools": [
+            "cpp,C++",
+            "c,C"
+        ],
+        "url": "../projects/astar-algorithm/index.html"
+    },
+    {
+        "title": "CGT241",
+        "subtitle": "Intro to Animation and Spatial Modeling",
+        "description": "Includes weekly Maya modeling exercises.",
+        "background_image": "/images/projects/cgt241.png",
+        "last_update": "09/18/2021",
+        "tools": [
+            "maya,Maya"
+        ],
+        "url": "../404.html"
+    },
+    {
+        "title": "HosDB",
+        "subtitle": "AIO Hospital Patient Database",
+        "description": "A solution for efficient patient management based on ethnographic interviews.",
+        "background_image": "/images/projects/hosdb.png",
+        "last_update": "12/02/2019",
+        "tools": [
+            "vb,Visual Basic .NET"
+        ],
+        "url": "../projects/hosdb/index.html"
+    },
+    {
+        "title": "CGT116",
+        "subtitle": "Geometric Modeling for Visualization and Communication",
+        "description": "Includes weekly Maya modeling exercises.",
+        "background_image": "/images/projects/cgt116.png",
+        "last_update": "05/01/2020",
+        "tools": [
+            "maya,Maya"
+        ],
+        "url": "../404.html"
+    }
+]

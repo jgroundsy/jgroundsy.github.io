@@ -1,0 +1,620 @@
+html{
+    font-family: 'Lexend Deca', sans-serif;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    background:rgb(33, 32, 50);
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.no-select{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+#navbar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    width: 100%;
+    height: 64px;
+}
+
+#navbar a{
+    float: right;
+    margin-right: 1em;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.2em;
+    font-weight: 300;
+    font-style: normal;
+    margin-top: 1em;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+}
+
+#navbar #a-home{
+    color: rgba(255,255,255,1);
+}
+
+#navbar img{
+    float: left;
+    width: 3em;
+    height: 3em;
+    margin-left: 1em;
+    margin-top: .5em;
+}
+
+#home{
+    position: relative;
+}
+
+#home canvas{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#header{
+    position: absolute;
+    width: 19em;
+    height: 10em;
+    top: 50%;
+    left: 50%;
+    margin-top: -10em;
+    margin-left: -9.5em;
+}
+
+#header h1{
+    font-size: 2.6em;
+}
+
+#header h2{
+    font-size: 32px;
+    color: rgb(90, 86, 152);;
+    margin-top: -1em;
+}
+
+#socials{
+    position: relative;
+    margin-top: -1em;
+}
+
+#socials .social-icon{
+    width: 1.5em;
+    height: 1.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: invert() brightness(100%) opacity(40%); 
+    display:inline-block;
+    cursor:pointer;
+    border-radius: 1em;
+}
+
+#socials #linkedin:hover{
+    filter: invert(34%) sepia(98%) saturate(914%) hue-rotate(170deg) brightness(88%) contrast(103%);
+}
+
+#socials #github:hover{
+    filter: invert(67%) sepia(75%) saturate(6635%) hue-rotate(343deg) brightness(97%) contrast(95%);
+}
+
+#socials #discord:hover{
+    filter: invert(55%) sepia(45%) saturate(563%) hue-rotate(190deg) brightness(91%) contrast(86%);
+}
+
+.arrow-wrapper{
+    z-index: 1;
+}
+
+#next-arrow{
+    position: absolute;
+    width: 2em;
+    height: 3em;
+    top: 95vh;
+    left: 50%;
+    margin-top: -1.5em;
+    margin-left: -1em;
+    filter: invert() brightness(100%) opacity(40%); 
+    transition: filter 200ms ease-in-out;
+}
+
+#next-arrow:hover{
+    filter: invert() brightness(100%) opacity(100%);
+}
+
+.arrow-text.bottom{
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    width: 4em;
+    height: 1.25em;
+    margin-left: -2em;
+    color: white;
+    text-decoration: none;
+    opacity: 0%;
+    font-weight: bold;
+    transition: opacity 400ms ease-in-out, top 200ms ease-in;
+    -moz-transition: opacity 400ms ease-in-out, top 200ms ease-in;
+    -webkit-transition: opacity 400ms ease-in-out, top 200ms ease-in;
+}
+
+.arrow-text.left{
+    position: absolute;
+    top: 46.5%;
+    left: 5%;
+    width: 4em;
+    height: 1.25em;
+    margin-left: -2em;
+    color: white;
+    text-decoration: none;
+    opacity: 0%;
+    font-weight: bold;
+    transition: opacity 400ms ease-in-out, top 200ms ease-in;
+    -moz-transition: opacity 400ms ease-in-out, top 200ms ease-in;
+    -webkit-transition: opacity 400ms ease-in-out, top 200ms ease-in;
+}
+
+.arrow-wrapper:hover > .arrow-text.bottom{
+    opacity: 100%;
+    top: 88vh;
+}
+
+.arrow-wrapper:hover > .arrow-text.left{
+    opacity: 100%;
+    top: 46%;
+}
+
+.scroll-snap{
+    padding: 1em;
+    height: 100%;
+    scroll-snap-align: start;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-snap h1{
+    color: white;
+}
+
+/*Projects Section*/
+
+.section-header{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#projects{
+    background-image: url('/images/background.png');
+    position: relative;
+}
+
+/*Contact Section*/
+
+#contact{
+    background-image: url('/images/background.png');
+    position: relative;
+}
+
+#form-container{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+#contact input[type='text']{
+    width: 20.5em;
+    height: 2.5em;
+    padding: 12px;
+    border: 2px solid rgb(97, 97, 163);
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: rgba(97,97,163, 0.15);
+    color: white;
+}
+
+#contact #form-name{
+    border-radius: 1em 1em 0em 0em;
+}
+
+#contact #form-email{
+    border-radius: 0em 0em 1em 1em;
+    margin-bottom: 10px;
+    margin-top: -2px;
+}
+
+#contact #form-subject{
+    border-radius: 1em 1em 0em 0em;
+}
+
+#contact textarea{
+    margin-bottom: 1em;
+    border: none;
+    resize: none;
+    width: 21.4em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 0em 0em 1em 1em;
+    padding: 12px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: .8em;
+    border: 2px solid rgb(97, 97, 163);
+    background-color: rgba(97,97,163, 0.15);
+    color: white;
+    margin-top: -2px;
+}
+
+.btn{
+    width: 12em;
+    height: 3em;
+    font-family: 'Lexend Deca', sans-serif;
+    border: 2px solid rgb(97, 97, 163);
+    background-color: rgba(97,97,163, 0.15);
+    color: white;
+    border-radius: 1em;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: bold;
+}
+
+#contact input[type='submit']{
+    width: 12em;
+    height: 3em;
+    font-family: 'Lexend Deca', sans-serif;
+    border: 2px solid rgb(97, 97, 163);
+    background-color: rgba(97,97,163, 0.15);
+    color: white;
+    border-radius: 1em;
+    transition: all 200ms ease-in-out;
+}
+
+#contact input[type='submit']:hover{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#contact h1{
+    font-size: 2.3em;
+}
+
+#contact h2{
+    font-size: 1.8em;
+    color: rgb(90, 86, 152);;
+    margin-top: -1em;
+}
+
+#contact-chars{
+    margin-top: -.5em;
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/*Project grid*/
+.project-grid{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 22em;
+    width: 84em;
+    max-width: 100%;
+    position: absolute;
+}
+
+.project-box{
+    box-sizing: border-box;
+    margin: .5em;
+    width: 20em;
+    height: 20em;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+    border-radius: 1em;
+}
+
+.project-box .project-image{
+    width: 20em;
+    height: 20em;
+    background-size: cover;
+    transform: scale(1.1);
+    filter: blur(3px);
+}
+
+.project-box .project-info{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 95%;
+    height: 95%;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    padding: 2.5%;
+}
+
+.project-box .project-tools{
+    position: absolute;
+    left: 0;
+    top: 85%;
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+}
+
+.project-box .project-tools .tool-text{
+    width: 150px;
+    height: auto;
+    font-size: 1.1em;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    margin-left: -81px;
+    top: -45px;
+    display: none;
+}
+
+.project-box .project-tools .tool{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    filter: invert() brightness(100%) opacity(40%); 
+    z-index: 1;
+    cursor: default;
+}
+
+.project-box .project-tools .tool.html:hover{
+    filter: invert(70%) sepia(90%) saturate(5040%) hue-rotate(345deg) brightness(98%) contrast(92%);
+}
+.project-box .project-tools .tool.css:hover{
+    filter: invert(32%) sepia(71%) saturate(3436%) hue-rotate(215deg) brightness(96%) contrast(96%);
+}
+.project-box .project-tools .tool.js:hover{
+    filter: invert(94%) sepia(9%) saturate(3441%) hue-rotate(332deg) brightness(113%) contrast(88%);
+}
+.project-box .project-tools .tool.jquery:hover{
+    filter: invert(24%) sepia(95%) saturate(1633%) hue-rotate(186deg) brightness(93%) contrast(94%);
+}
+.project-box .project-tools .tool.cpp:hover{
+    filter: invert(16%) sepia(70%) saturate(2304%) hue-rotate(224deg) brightness(97%) contrast(96%);
+}
+.project-box .project-tools .tool.c:hover{
+    filter: invert(10%) sepia(60%) saturate(6437%) hue-rotate(329deg) brightness(91%) contrast(103%);
+}
+.project-box .project-tools .tool.maya:hover{
+    filter: invert(27%) sepia(73%) saturate(2466%) hue-rotate(162deg) brightness(100%) contrast(94%);
+}
+.project-box .project-tools .tool.vb:hover{
+    filter: invert(26%) sepia(37%) saturate(1313%) hue-rotate(228deg) brightness(90%) contrast(117%);
+}
+.project-box .project-tools .tool.firebase:hover{
+    filter: invert(77%) sepia(53%) saturate(4062%) hue-rotate(350deg) brightness(106%) contrast(101%);
+}
+.project-box .project-tools .tool.php:hover{
+    filter: invert(47%) sepia(16%) saturate(1232%) hue-rotate(188deg) brightness(93%) contrast(86%);
+}
+.project-box .project-tools .tool.python:hover{
+    filter: invert(74%) sepia(58%) saturate(485%) hue-rotate(5deg) brightness(108%) contrast(90%);
+}
+
+.project-box .project-info .project-header{
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+.project-box .project-info .project-subheader{
+    font-size: 1.2em;
+    margin-top: -1em;
+}
+
+.project-box .project-info .project-description{
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.project-grid .project-box{
+    border: 2px solid rgb(106, 83, 203);
+    cursor: pointer;
+}
+
+.project-grid .project-box .project-info{
+    background-color: rgba(108, 83, 203, 0.15);
+}
+
+.project-box.filler{
+    background-color: rgba(43, 43, 43, 0.3);
+    border: 2px solid rgb(68, 68, 68);
+    cursor: default;
+}
+
+
+/* .project-grid .project-box:nth-child(1){
+    border: 3px solid rgb(108, 83, 203);
+}
+
+.project-grid .project-box:nth-child(1) .project-info{
+    background-color: rgba(108, 83, 203,0.15)
+}
+
+.project-grid .project-box:nth-child(2){
+    border: 3px solid rgb(57, 88, 170);
+}
+
+.project-grid .project-box:nth-child(2) .project-info{
+    background-color: rgba(57, 88, 170, 0.4)
+}
+
+.project-grid .project-box:nth-child(3){
+    border: 3px solid rgb(57, 88, 170);
+}
+
+.project-grid .project-box:nth-child(3) .project-info{
+    background-color: rgba(57, 88, 170, .4);
+}
+
+.project-grid .project-box:nth-child(4){
+    border: 3px solid rgb(108, 83, 203);
+}
+
+.project-grid .project-box:nth-child(4) .project-info{
+    background-color: rgba(108, 83, 203,0.15)
+} */
+
+
+/*Carousel*/
+#carousel-container{
+    width: 84em;
+    max-width: 95%;
+    height: 22em;
+    margin: 0 auto;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.carousel-item{
+    display: none;
+}
+
+.prev, .next{
+    width: 25px;
+    height: 70px;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    margin: auto;
+    margin-top: -35px;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev{
+    left: 0%;
+    margin-left: -25px;
+}
+
+.next{
+    left: 100%;
+}
+
+#carousel-dots{
+    position: absolute;
+    top: 22em;
+    left: 50%;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #bbb;
+    transition: background-color 300ms ease;
+}
+
+.active, .dot:hover{
+    background-color: #717171;
+}
+
+/*Project Iframe*/
+#project-iframe{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+#project-close{
+    display: none;
+    opacity: 0;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 95%;
+    width: 125px;
+    transform: translateX(-125px);
+    z-index: 4;
+    cursor: pointer;
+}
+
+/*404 Error Page*/
+
+.page-container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/images/background.png');
+}
+.error-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    text-align: center;
+}
+
+.error-container p{
+    color: white;
+    font-size: 1.3em;
+    margin-top: -1em;
+    font-weight: 300;
+}
+.error-wrapper{
+    width: 425px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.error-span{
+    font-size: 150px;
+    color: #343457;
+    stroke: #6161A3;
+    text-shadow: -2px 0 #6161A3, 0 2px #6161A3, 2px 0 #6161A3, 0 -2px #6161A3;
+}
+
+.error-wrapper > .error-img, .error-wrapper > .error-span{
+    vertical-align: middle;
+}
