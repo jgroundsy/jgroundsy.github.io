@@ -52,7 +52,7 @@
             "cpp,C++",
             "c,C"
         ],
-        "url": "../projects/astar-algorithm/index.html"
+        "url": "../projects/astar/index.html"
     },
     {
         "title": "CGT241",
@@ -74,7 +74,7 @@
         "tools": [
             "vb,Visual Basic .NET"
         ],
-        "url": "../projects/hosdb/index.html"
+        "url": "../projects/hosdatabase/index.html"
     },
     {
         "title": "CGT116",

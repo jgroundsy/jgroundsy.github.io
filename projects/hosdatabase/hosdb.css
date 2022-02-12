@@ -15,7 +15,7 @@ body{
     margin: 0 auto;
     background: rgb(33, 32, 50);
     font-family: 'Lexend Deca', sans-serif;
-    background-image: url(../images/background.png);
+    background-image: url(../../images/background.png);
 }
 
 .page-container{
