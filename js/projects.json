@@ -12,7 +12,7 @@
             "jquery,jQuery",
             "firebase,Firebase"
         ],
-        "url": "../error.html"
+        "url": "../projects/tunequeue/index.html"
     },
     {
         "title": "Zero-day",
@@ -55,17 +55,6 @@
         "url": "../projects/astar/index.html"
     },
     {
-        "title": "CGT241",
-        "subtitle": "Intro to Animation and Spatial Modeling",
-        "description": "Includes weekly Maya modeling exercises.",
-        "background_image": "/images/projects/cgt241.png",
-        "last_update": "09/18/2021",
-        "tools": [
-            "maya,Maya"
-        ],
-        "url": "../error.html"
-    },
-    {
         "title": "HosDB",
         "subtitle": "AIO Hospital Patient Database",
         "description": "A solution for efficient patient management based on ethnographic interviews.",
@@ -77,6 +66,17 @@
         "url": "../projects/hosdatabase/index.html"
     },
     {
+        "title": "CGT241",
+        "subtitle": "Intro to Animation and Spatial Modeling",
+        "description": "Includes weekly Maya modeling exercises.",
+        "background_image": "/images/projects/cgt241.png",
+        "last_update": "09/18/2021",
+        "tools": [
+            "maya,Maya"
+        ],
+        "url": "../404.html"
+    },
+    {
         "title": "CGT116",
         "subtitle": "Geometric Modeling for Visualization and Communication",
         "description": "Includes weekly Maya modeling exercises.",
@@ -85,6 +85,6 @@
         "tools": [
             "maya,Maya"
         ],
-        "url": "../error.html"
+        "url": "../404.html"
     }
 ]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Jared Grounds: TuneQueue</title>
+    <meta name='description' content='TuneQueue'>
+    <meta name='author' content='Jared Grounds'>
+    <link rel="stylesheet" href="../../doc.css">
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+</head>
+
+<body>
+    <br><br><br><br>
+    <div class="page-container">
+        <h1>TuneQueue</h1>
+        <h2>API Implementation</h2>
+        <button class='view-btn' onclick="window.open('https://github.com/jgroundsy/aStar-Algorithm')"><img
+                class='btn-img' src='/images/socials/github.png'><span class="btn-text">View on
+                Github</span></button>
+        <div class="description-wrapper">
+            <p><span class='text-section'>Description: </span>TuneQueue allows friends to queue their favorite songs to
+                your spotify account. This can be used in a group setting where everyone may not have their own spotify
+                account, or perhaps you do not want individuals to keep asking you to play a song. With TuneQueue, your
+                friends can queue songs using their own device.
+                </span>
+            </p>
+            <p><span class='text-section'>Setup: </span>The repository contains two folders that need to be
+                hosted on your server: <span class="text-emphasis">TuneQueue-host</span> which handles spotify
+                authentication, and <span class="text-emphasis">TuneQueue-remote</span> that
+                receives authentication information from the host.<br><br>Navigate to your Spotiy developer dashboard,
+                create a project, and add the generated client_id to the host code. You may also need to whitelist your
+                specific redirect URI.<br><br>Also create a FireBase realtime database, and add your database config to
+                the both the host and remote code.<br><br>Your firebase API key and spotify playlist ID are only
+                available to those you share it
+                with. These can easily be shared by generating a QR code and including the search params <span
+                    class="text-emphasis">?key=KEY&playlist=PLAYLIST</span>. If you choose not to do thisq the API key
+                and playlist ID can be hard-coded, but will be available to anyone that visits your site.
+                </span>
+            </p>
+        </div>
+
+        <iframe src="https://www.thiscodeworks.com/embed/620831dbd9ba1100151e6c0a" style="width: 100%; height: 333px;"
+            frameborder="0">
+        </iframe>
+
+        <div class="description-wrapper">
+            <p><span class="text-section">How to use: </span></p>
+        </div>
+
+        <div class="iphone-mockup">
+            <div class="mockup-row">
+                <div class="mockup-col">
+                    <img src='files/1.png'>
+                </div>
+                <div class="mockup-col">
+                    <img src='files/2.png'>
+                </div>
+                <div class="mockup-col">
+                    <img src='files/3.png'>
+                </div>
+            </div>
+            <div class="mockup-row">
+                <div class="mockup-col">
+                    <p>Navigate to the <span class="text-emphasis">host</span> webpage and authenticate with the same
+                        Spotify account that has developer access.</p>
+                </div>
+                <div class="mockup-col">
+                    <p>Once authenticated, users will be able to access the <span class="text-emphasis">remote</span>
+                        webpage.</p>
+                </div>
+                <div class="mockup-col">
+                    <p>Search any song in the spotify catalog and tap it to add to the host account's queue. It will
+                        play on the host's device that is currently playing music.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br><br><br>
+</body>
+
+</html>

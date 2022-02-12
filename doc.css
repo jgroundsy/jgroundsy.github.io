@@ -122,4 +122,15 @@ p{
     vertical-align: middle;
 }
 
+.mockup-row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+}
+
+.mockup-col{
+    flex: 25%;
+    padding: 0 5px;
+}
+
 
