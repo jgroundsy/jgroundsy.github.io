@@ -12,7 +12,7 @@
             "jquery,jQuery",
             "firebase,Firebase"
         ],
-        "url": "../404.html"
+        "url": "../error.html"
     },
     {
         "title": "Zero-day",
@@ -63,7 +63,7 @@
         "tools": [
             "maya,Maya"
         ],
-        "url": "../404.html"
+        "url": "../error.html"
     },
     {
         "title": "HosDB",
@@ -85,6 +85,6 @@
         "tools": [
             "maya,Maya"
         ],
-        "url": "../404.html"
+        "url": "../error.html"
     }
 ]
