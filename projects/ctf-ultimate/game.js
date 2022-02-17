@@ -94,6 +94,7 @@ function drawBall() {
         gameBall.y += gameBall.vy * ballSpeed;
     }
 
+    //change ball behavior if the english control option is enabled
     if (gameBall.heldBy == 3 && englishControl) {
         if (gameBall.vx > -.000000003 && gameBall.vx < 0.000000003 && gameBall.vx != 0) {
             gameBall.vx = 0;
@@ -380,6 +381,6 @@ function resetBoard() {
         vy: 0,
         heldBy: 0
     }
-    document.getElementById('color1-btn').style.backgroundColor = 'black';
-    document.getElementById('color2-btn').style.backgroundColor = 'black';
+    document.getElementById('color1-btn').style.backgroundColor = 'rgba(0,0,0,0.6)';
+    document.getElementById('color2-btn').style.backgroundColor = 'rgba(0,0,0,0.6)';
 }
