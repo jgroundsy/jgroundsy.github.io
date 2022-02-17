@@ -9,7 +9,7 @@ body{
 #game{
     background-color: black;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 .btn-wrapper{
@@ -206,8 +206,8 @@ input[type='file']{
     z-index: 2;
     pointer-events: none;
     /* animation: flicker 0.15s infinite; */
-  }
-  .crt::before {
+}
+.crt::before {
     content: " ";
     display: block;
     position: absolute;
@@ -219,7 +219,29 @@ input[type='file']{
     z-index: 2;
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
-  }
-  .crt {
+}
+.crt {
     animation: textShadow 1.6s infinite;
-  }
+}
+
+.sliders{
+    position: absolute;
+    width: 175px;
+    height: auto;
+    left: 100%;
+    top: 10px;
+    margin-left: 0px;
+    background-color: black;
+}
+
+label{
+    color: white;
+}
+
+#settings-btn{
+  position: absolute;
+  left: -45px;
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}

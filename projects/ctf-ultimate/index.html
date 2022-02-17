@@ -9,6 +9,26 @@
 </head>
 
 <body>
+    <div class="sliders">
+        <img id="settings-btn" src="images/settings.png" alt="settings" role="button" onclick="toggleOptionBar();">
+        <div class="slider-container">
+            <label for='speed-slider' id='speed-label'>Speed: 3</label>
+            <input type='range' min='1' max='20' value='3' class='slider' id='speed-slider' name='speed-slider'>
+        </div>
+        <div class="slider-container">
+            <label for='ball-speed-slider' id='ball-speed-label'>Ball Speed: 1</label>
+            <input type='range' min='1' max='5' value='1' step="0.1" class='slider' id='ball-speed-slider'
+                name='ball-speed-slider'>
+        </div>
+        <div class="slider-container">
+            <label for='english-slider' id='english-label'>English Control: OFF</label>
+            <input type='checkbox' class='slider' id='english-slider' name='english-slider'>
+        </div>
+        <div class="slider-container">
+            <label for='buttons-slider' id='buttons-label'>Hide Buttons: OFF</label>
+            <input type='checkbox' class='slider' id='buttons-slider' name='buttons-slider'>
+        </div>
+    </div>
     <div class="btn-wrapper">
         <button id='color1-btn' class='color-btn' onclick='getRandomColor(1);'>Color</button>
         <label for='load-btn' class='file-hide'>
