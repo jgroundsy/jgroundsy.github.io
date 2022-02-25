@@ -1,57 +1,34 @@
 
-var projectLimit = 4;
-var mobileDevice;
+var projectLimit = Math.floor((window.innerWidth / 365));
 var viewingProject = false;
 
-//check if user is viewing on mobile device
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-    //lower the amount of projects that can be listed on one slide of carousel
-    //may need to update this based on the resolution of the current device browser. (ipads vs iphones)
-    if ($(window).height() == 1080 && $(window).width() == 810) {
-        mobileDevice = 'tablet';
-        projectLimit = 2;
-        loadProjects();
-    } else {
-        mobileDevice = 'phone';
-        projectLimit = 1;
-        loadProjects();
-    }
-} else {
+$(document).ready(function () {
+    $('#carousel-container').css('width', ((330 * projectLimit) + 'px'));
     loadProjects();
-}
+});
 
-function loadMobileStyling() {
+$
+function resizeProjects() {
+    let newLimit = Math.floor((window.innerWidth / 365));
 
-    if (mobileDevice == 'iphone') {
-        $('.project-grid').css('margin-left', '.5em');
-        $('.prev').css('margin-left', '-3.5%');
-        $('.next').css('margin-left', '-5%');
+    if (newLimit > projectLimit || newLimit < projectLimit) {
+        $('#carousel-container').html("<a class='prev no-select' onclick='moveCarousel(-1)'>&#10094;</a>" +
+            "<a class='next no-select' onclick='moveCarousel(1)'>&#10095;</a>" +
+            "<div id='carousel-dots'><span class='dot' onclick='displayItem(1)'></span></div>" +
+            "<div id='grid-1' class='carousel-item project-grid'></div>");
 
-        $('#defaultCanvas0').css({
-            'width': '110%',
-            'height': '110%',
-            top: '60%'
-        });
+        $('#carousel-container').css('width', ((330 * newLimit) + 'px'));
+        loadProjects();
+        displayItem(1);
     }
 
-    if (mobileDevice == 'tablet') {
-        $('.project-grid').css('margin-left', '3em');
-        $('.prev').css('margin-left', '-.5%');
-        $('.next').css('margin-left', '-4%');
-
-        $('#defaultCanvas0').css({
-            'width': '110%',
-            'height': '110%',
-            top: '60%'
-        });
-    }
-
+    projectLimit = newLimit;
 }
 
 function loadProjects() {
     $.getJSON('/js/projects.json', function (data) {
-        let projectCount = Object.keys(data).length;
-        let currentGrid = 0;
+        let projectCount = Object.keys(data).length; //number of projects in json list
+        let currentGrid = 0; //current set of projects that is being populated
 
         for (let i = 0; i < projectCount; i++) {
             let title = data[i].title;
@@ -62,11 +39,14 @@ function loadProjects() {
             let type = data[i].type;
             let url = data[i].url;
 
+            //create project element
             let element = document.createElement('div');
             element.id = 'project-' + i;
             element.className = 'project-box';
-            element.setAttribute('onclick', "viewProject('" + url + "')");
+            //add redirect link to project onclick
+            element.setAttribute('onclick', "window.location.href = '" + url + "';");
 
+            //add project information to the project
             element.innerHTML = ("<img class='project-image' src='" + bgImage + "'/>" +
                 "<div class='project-info'>" +
                 "<h1 class='project-header'>" + title + "</h1>" +
@@ -74,12 +54,15 @@ function loadProjects() {
                 "<p class='project-description'>" + description + "</p></div>"
             );
 
+
+            //create tools element
             let toolsElement = document.createElement('div');
             toolsElement.id = 'tools-' + i;
             toolsElement.className = 'project-tools';
 
             element.appendChild(toolsElement);
 
+            //add tool logo and text to the tools element
             for (let j = 0; j < tools.length; j++) {
                 let toolSpan = document.createElement('img');
                 toolSpan.id = 'tool-' + j;
@@ -97,9 +80,11 @@ function loadProjects() {
 
             $('#project-' + i).append($('#tools-' + i));
 
+            //check if this is the last project that can fit inside of the grid
             if ((i) % projectLimit == 0) {
                 currentGrid++;
             }
+
 
             if (!$('#grid-' + currentGrid).length) {
                 //increase number of project grids
@@ -117,11 +102,12 @@ function loadProjects() {
             }
 
             $('#grid-' + currentGrid).append(element);
-
         }
 
+        //calculate how many additional projects are needed to fill the grid
         let remainder = (projectLimit * currentGrid) - projectCount;
 
+        //add filler projects 
         if (remainder != 0) {
             for (let x = remainder; x > 0; x--) {
                 let fillerElement = document.createElement('div');
@@ -131,55 +117,5 @@ function loadProjects() {
                 $('#grid-' + currentGrid).append(fillerElement);
             }
         }
-
-        if (mobileDevice) {
-            loadMobileStyling(mobileDevice);
-        }
     });
 }
-
-$(window).scroll(function () {
-    if (viewingProject == true) {
-        closeProject();
-    }
-});
-
-function viewProject(url) {
-    viewingProject = true;
-    $('#project-iframe').attr('src', url);
-
-    $('#navbar').css('background-image', 'url(./images/navbg.png)');
-
-    $('#project-iframe').css('display', 'block');
-    $('#project-iframe').animate({
-        opacity: 1
-    }, 500);
-
-    $('#project-close').css('display', 'block');
-    $('#project-close').animate({
-        opacity: 1
-    }, 500);
-}
-
-function closeProject() {
-    viewingProject = false;
-    $('#project-iframe').animate({
-        opacity: 0
-    }, 500).promise().done(function () {
-        $('#project-iframe').css('display', 'none');
-    });
-
-    $('#project-iframe').attr('src', '');
-
-    $('#navbar').css('background-image', 'none');
-
-    $('#project-close').animate({
-        opacity: 0
-    }, 500).promise().done(function () {
-        $('#project-close').css('display', 'none');
-    })
-}
-
-$(document).on('click', '#project-close', function () {
-    closeProject();
-});

@@ -16,15 +16,13 @@ function setup() {
 
 function windowResized() {
   screenW = window.innerWidth;
-  screenH = window.innerHeight + 150;
+  screenH = window.innerHeight + 500;
 
   resizeCanvas(screenW, screenH);
   $('.scroll-snap').css({
     width: '100%',
     height: '100%'
   });
-
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
 
   shape.clear();
   shape2.clear();
@@ -35,6 +33,7 @@ function windowResized() {
   shape3 = createGraphics(screenW, screenH);
 
   draw();
+  resizeProjects();
 }
 
 function draw() {
