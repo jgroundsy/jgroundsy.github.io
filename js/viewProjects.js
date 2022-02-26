@@ -1,13 +1,39 @@
-
 var projectLimit = Math.floor((window.innerWidth / 365));
+var mobile = (/android|iphone|ipad|ipod|blackberry|webos|iemobile|Opera mini/i.test(navigator.userAgent));
 var viewingProject = false;
 
+
 $(document).ready(function () {
+    //resize carousel based on how many projects can fit on the screen
     $('#carousel-container').css('width', ((330 * projectLimit) + 'px'));
     loadProjects();
+
+    if (mobile) {
+        let xStart = 0;
+        let xEnd = 0;
+
+        $('#carousel-container').on('touchstart', e => {
+            xStart = e.changedTouches[0].screenX
+        });
+
+        $('#carousel-container').on('touchend', e => {
+            xEnd = e.changedTouches[0].screenX
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (xStart > xEnd) {
+                moveCarousel(-1);
+            }
+
+            if (xStart < xEnd) {
+                moveCarousel(1);
+            }
+        }
+    }
 });
 
-$
+//detect when window size changes and update how many projects can be displayed.
 function resizeProjects() {
     let newLimit = Math.floor((window.innerWidth / 365));
 

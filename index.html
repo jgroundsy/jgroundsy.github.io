@@ -6,9 +6,6 @@
     <meta name='description' content='Online Portfolio'>
     <meta name='author' content='Jared Grounds'>
     <link rel="stylesheet" href="master.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200&display=swap');
-    </style>
     <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 </head>
 
@@ -18,7 +15,7 @@
         <a id='a-contact' href='#contact'>Contact</a>
         <a id='a-projects' href='#projects'>Projects</a>
         <a id='a-home' href='#home'>Home</a>
-        <img src='images/favicon-new.png'>
+        <img src='../../images/favicon-new.png'>
     </div>
     <!--Home-->
     <div id='home' class='scroll-snap'>
@@ -45,7 +42,7 @@
     <!--Projects-->
     <div id='projects' class='scroll-snap'>
         <!-- <h1 class='section-header'>Projects</h1> -->
-        <div id="carousel-container">
+        <div id="carousel-container" class="no-select">
             <a class='prev no-select' onclick='moveCarousel(-1)'>&#10094;</a>
             <a class='next no-select' onclick='moveCarousel(1)'>&#10095;</a>
             <div id='carousel-dots'><span class='dot' onclick='displayItem(1)'></span></div>

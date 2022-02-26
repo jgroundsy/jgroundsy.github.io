@@ -1,28 +1,27 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <title>Project1: Gen 1 Pokemon</title>
 
-    <link rel="stylesheet" href="master.css"/>
+    <link rel="stylesheet" href="master.css" />
     <script src="js/jquery-3.60.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 
 <body>
-    <div id='navbar'>
-        <div id="nav-content-wrapper">
-            <img src='images/pokeball.png' alt='PokéType'>
-            <a id="a-nav">PokéType</a>
-        </div>
-    </div>
+    <!--Nav-->
+    <div id='navbar' class='no-select'></div>
 
     <div id='popup'>
         <img src='images/glowing_pokeball.png'>
         <h1>Thank you for choosing us!</h1>
         <h2>You can make a contribution</h2>
-        <p>In order to provide our users with ad-free content, a large source of our revenue comes from voluntary donations to our website. If you enjoy not having to look at intrusive advertisements, please consider donating; Any amount is appreciated!</p>
+        <p>In order to provide our users with ad-free content, a large source of our revenue comes from voluntary
+            donations to our website. If you enjoy not having to look at intrusive advertisements, please consider
+            donating; Any amount is appreciated!</p>
         <a href='#' id='donate-btn1' class='btn'>$0</a>
         <a href='#' id='donate-btn2' class='btn'>$10</a>
         <a href='#' id='donate-btn3' class='btn'>$20</a>
@@ -36,32 +35,34 @@
         <section id="home">
             <div id="container" class="container">
                 <div class="image_wrapper">
-                    <img id="type1" class="typeimg" src="images/1.png" alt="Grass"/>
-                    <img id="type2" class="typeimg" src="images/2.png" alt="Fire"/>
-                    <img id="type3" class="typeimg" src="images/3.png" alt="Water"/>
-                    <img id="type4" class="typeimg" src="images/4.png" alt="Electric"/>
-                    <img id="type5" class="typeimg" src="images/5.png" alt="Bug"/>
-                    <img id="type6" class="typeimg" src="images/6.png" alt="Ground"/>
-                    <img id="type7" class="typeimg" src="images/7.png" alt="Rock"/>
-                    <img id="type8" class="typeimg" src="images/8.png" alt="Normal"/>
-                    <img id="type9" class="typeimg" src="images/9.png" alt="Poison"/>
-                    <img id="type10" class="typeimg"  src="images/10.png" alt="Psychic"/>
-                    <img id="type11" class="typeimg"  src="images/11.png" alt="Fairy"/>
-                    <img id="type12" class="typeimg"  src="images/12.png" alt="Fighting"/>
-                    <img id="type13" class="typeimg"  src="images/13.png" alt="Flying"/>
-                    <img id="type14" class="typeimg"  src="images/14.png" alt="Ghost"/>
-                    <img id="type15" class="typeimg"  src="images/15.png" alt="Dragon"/>
-                    <img id="type16" class="typeimg"  src="images/16.png" alt="Ice"/>
-                    <img id="type17" class="typeimg"  src="images/17.png" alt="Steel"/>
-                </div> <!--Close image wrapper-->
-            
+                    <img id="type1" class="typeimg" src="images/1.png" alt="Grass" />
+                    <img id="type2" class="typeimg" src="images/2.png" alt="Fire" />
+                    <img id="type3" class="typeimg" src="images/3.png" alt="Water" />
+                    <img id="type4" class="typeimg" src="images/4.png" alt="Electric" />
+                    <img id="type5" class="typeimg" src="images/5.png" alt="Bug" />
+                    <img id="type6" class="typeimg" src="images/6.png" alt="Ground" />
+                    <img id="type7" class="typeimg" src="images/7.png" alt="Rock" />
+                    <img id="type8" class="typeimg" src="images/8.png" alt="Normal" />
+                    <img id="type9" class="typeimg" src="images/9.png" alt="Poison" />
+                    <img id="type10" class="typeimg" src="images/10.png" alt="Psychic" />
+                    <img id="type11" class="typeimg" src="images/11.png" alt="Fairy" />
+                    <img id="type12" class="typeimg" src="images/12.png" alt="Fighting" />
+                    <img id="type13" class="typeimg" src="images/13.png" alt="Flying" />
+                    <img id="type14" class="typeimg" src="images/14.png" alt="Ghost" />
+                    <img id="type15" class="typeimg" src="images/15.png" alt="Dragon" />
+                    <img id="type16" class="typeimg" src="images/16.png" alt="Ice" />
+                    <img id="type17" class="typeimg" src="images/17.png" alt="Steel" />
+                </div>
+                <!--Close image wrapper-->
+
                 <!--Navigation elements-->
                 <div class="next"></div>
                 <div class="prev"></div>
 
                 <!--Unordered list for thumbnail preview-->
                 <ul class="nav">
-                    <li id=nav1 class="selected"><a class="thumbnav" href="images/1.png" rel="images/thumbs/1.jpg">Grass</a></li>
+                    <li id=nav1 class="selected"><a class="thumbnav" href="images/1.png"
+                            rel="images/thumbs/1.jpg">Grass</a></li>
                     <li id="nav2"><a class="thumbnav" href="images/2.png" rel="images/thumbs/2.jpg">Fire</a></li>
                     <li id="nav3"><a class="thumbnav" href="images/3.png" rel="images/thumbs/3.jpg">Water</a></li>
                     <li id="nav4"><a class="thumbnav" href="images/4.png" rel="images/thumbs/4.jpg">Electric</a></li>
@@ -78,7 +79,7 @@
                     <li id="nav15"><a class="thumbnav" href="images/15.png" rel="images/thumbs/15.jpg">Dragon</a></li>
                     <li id="nav16"><a class="thumbnav" href="images/16.png" rel="images/thumbs/16.jpg">Ice</a></li>
                     <li id="nav17"><a class="thumbnav" href="images/17.png" rel="images/thumbs/17.jpg">Steel</a></li>
-                    
+
                     <li class="preview">
                         <div class="preview-wrapper">
                             <!--Thumnail goes here-->
@@ -96,4 +97,5 @@
     <script src="js/ad.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/hover.js"></script>
+    <script src="../../js/nav.js"></script>
 </body>
