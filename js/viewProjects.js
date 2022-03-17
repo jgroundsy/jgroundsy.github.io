@@ -6,6 +6,7 @@ var viewingProject = false;
 $(document).ready(function () {
     //resize carousel based on how many projects can fit on the screen
     $('#carousel-container').css('width', ((330 * projectLimit) + 'px'));
+    $('.project-grid').css('width', $('#carousel-container').css('width'));
     loadProjects();
 
     if (mobile) {
@@ -44,6 +45,7 @@ function resizeProjects() {
             "<div id='grid-1' class='carousel-item project-grid'></div>");
 
         $('#carousel-container').css('width', ((330 * newLimit) + 'px'));
+        $('.project-grid').css('width', $('#carousel-container').css('width'));
         loadProjects();
         displayItem(1);
     }
