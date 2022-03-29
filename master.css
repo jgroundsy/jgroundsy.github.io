@@ -406,6 +406,12 @@ body{
 .project-box .project-tools .tool.c:hover{
     filter: invert(10%) sepia(60%) saturate(6437%) hue-rotate(329deg) brightness(91%) contrast(103%);
 }
+.project-box .project-tools .tool.cs:hover{
+    filter: invert(40%) sepia(13%) saturate(2292%) hue-rotate(255deg) brightness(89%) contrast(93%);
+}
+.project-box .project-tools .tool.aspnet:hover{
+    filter: invert(37%) sepia(69%) saturate(1066%) hue-rotate(171deg) brightness(97%) contrast(91%);
+}
 .project-box .project-tools .tool.maya:hover{
     filter: invert(27%) sepia(73%) saturate(2466%) hue-rotate(162deg) brightness(100%) contrast(94%);
 }

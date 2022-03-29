@@ -15,6 +15,20 @@
         "url": "../projects/tunequeue/index.html"
     },
     {
+        "title": "Equ8",
+        "subtitle": "Arithmetic Game",
+        "description": "A series of math expressions will be displayed on the screen, and the player must correctly evaluate them before time is up",
+        "background_image": "/images/projects/equ8.png",
+        "last_update": "3/29/2022",
+        "tools": [
+            "html,HTML",
+            "css,CSS",
+            "aspnet, ASP.NET",
+            "cs,C#"
+        ],
+        "url": "https://equ8.azurewebsites.net/index.aspx"
+    },
+    {
         "title": "Zero-day",
         "subtitle": "Round-based Game",
         "description": "A zero-day exploit has been discovered for your software. You must eliminate harmful bugs, in your code, and release patches.",

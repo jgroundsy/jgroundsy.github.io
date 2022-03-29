@@ -178,4 +178,49 @@ p{
     padding: 0 5px;
 }
 
+.mockup-col img{
+    width: 15vw;
+    max-width: 275px;
+}
+
+.mockup-col p{
+    font-size: 3vw;
+}
+
+.code-snippet{
+    text-align: left;
+    background-color: #3A3858;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    font-size: 2.5vw;
+}
+
+@media screen and (min-width: 400px){
+    .code-snippet{
+        font-size: 1em;
+    }
+
+    .mockup-col p{
+        font-size: 1em;
+    }
+}
+
+.code-snippet .cmt{
+    color: #93929e;
+}
+
+.code-snippet .indent{
+    margin-left: 28px;
+}
+
+.code-snippet .one{
+    color: #9E98F0;
+}
+
+.code-snippet .two{
+    color: #9b6de0;
+}
+
+
 
