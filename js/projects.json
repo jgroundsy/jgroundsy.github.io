@@ -78,27 +78,5 @@
             "vb,Visual Basic .NET"
         ],
         "url": "../projects/hosdatabase/index.html"
-    },
-    {
-        "title": "CGT241",
-        "subtitle": "Intro to Animation and Spatial Modeling",
-        "description": "Includes weekly Maya modeling exercises.",
-        "background_image": "/images/projects/cgt241.png",
-        "last_update": "09/18/2021",
-        "tools": [
-            "maya,Maya"
-        ],
-        "url": "../404.html"
-    },
-    {
-        "title": "CGT116",
-        "subtitle": "Geometric Modeling for Visualization and Communication",
-        "description": "Includes weekly Maya modeling exercises.",
-        "background_image": "/images/projects/cgt116.png",
-        "last_update": "05/01/2020",
-        "tools": [
-            "maya,Maya"
-        ],
-        "url": "../404.html"
     }
 ]

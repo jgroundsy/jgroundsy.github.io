@@ -75,6 +75,13 @@
     <script src='js/carousel.js'></script>
 
     <script>
+
+        $('#form-container').load(function () {
+            $('#form-name').val() = "";
+            $('#form-email').val() = "";
+            $('#form-subject').val() = "";
+            $('#form-message').val() = "";
+        });
         $(document).ready(function () {
             var charCount = $('#form-message').val().length;
             $('#contact-chars').html('Characters left: ' + (256 - charCount));
