@@ -55,7 +55,7 @@
         <div id="form-container">
             <h1>Any questions?</h1>
             <h2>Submit them here!</h2>
-            <form action='https://formspree.io/f/xrgjpega' method='post'>
+            <form id="contact-form" action='https://formspree.io/f/xrgjpega' method='post'>
                 <input id='form-name' type='text' name='name' required='' placeholder='Name'><br>
                 <input type='text' name='email' id='form-email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
                     title='Enter a valid e-mail address' required='' placeholder='E-mail Address'><br>
@@ -76,12 +76,10 @@
 
     <script>
 
-        $('#form-container').load(function () {
-            $('#form-name').val() = "";
-            $('#form-email').val() = "";
-            $('#form-subject').val() = "";
-            $('#form-message').val() = "";
-        });
+        $(window).bind("pageshow", function () {
+            $('#contact-form')[0].reset();
+        })
+
         $(document).ready(function () {
             var charCount = $('#form-message').val().length;
             $('#contact-chars').html('Characters left: ' + (256 - charCount));

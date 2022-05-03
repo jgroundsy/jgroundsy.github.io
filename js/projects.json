@@ -15,20 +15,6 @@
         "url": "../projects/tunequeue/index.html"
     },
     {
-        "title": "Equ8",
-        "subtitle": "Arithmetic Game",
-        "description": "A series of math expressions will be displayed on the screen, and the player must correctly evaluate them before time is up",
-        "background_image": "/images/projects/equ8.png",
-        "last_update": "3/29/2022",
-        "tools": [
-            "html,HTML",
-            "css,CSS",
-            "aspnet, ASP.NET",
-            "cs,C#"
-        ],
-        "url": "https://equ8.azurewebsites.net/index.aspx"
-    },
-    {
         "title": "Zero-day",
         "subtitle": "Round-based Game",
         "description": "A zero-day exploit has been discovered for your software. You must eliminate harmful bugs, in your code, and release patches.",
@@ -41,6 +27,18 @@
             "jquery,jQuery"
         ],
         "url": "../projects/zero-day/index.html"
+    },
+    {
+        "title": "C++ A* Algorithm",
+        "subtitle": "Pathfinding Algorithm",
+        "description": "Calculate the shortest path from start tile to end tile while avoiding obstacles.",
+        "background_image": "/images/projects/astaralgorithm.png",
+        "last_update": "11/16/2020",
+        "tools": [
+            "cpp,C++",
+            "c,C"
+        ],
+        "url": "../projects/astar/index.html"
     },
     {
         "title": "PokéType",
@@ -57,18 +55,6 @@
         "url": "../projects/poketype/index.html"
     },
     {
-        "title": "C++ A* Algorithm",
-        "subtitle": "Pathfinding Algorithm",
-        "description": "Calculate the shortest path from start tile to end tile while avoiding obstacles.",
-        "background_image": "/images/projects/astaralgorithm.png",
-        "last_update": "11/16/2020",
-        "tools": [
-            "cpp,C++",
-            "c,C"
-        ],
-        "url": "../projects/astar/index.html"
-    },
-    {
         "title": "HosDB",
         "subtitle": "AIO Hospital Patient Database",
         "description": "A solution for efficient patient management based on ethnographic interviews.",
@@ -78,5 +64,19 @@
             "vb,Visual Basic .NET"
         ],
         "url": "../projects/hosdatabase/index.html"
+    },
+    {
+        "title": "Equ8",
+        "subtitle": "Arithmetic Game",
+        "description": "A series of math expressions will be displayed on the screen, and the player must correctly evaluate them before time is up",
+        "background_image": "/images/projects/equ8.png",
+        "last_update": "3/29/2022",
+        "tools": [
+            "html,HTML",
+            "css,CSS",
+            "aspnet, ASP.NET",
+            "cs,C#"
+        ],
+        "url": "https://equ8.azurewebsites.net/index.aspx"
     }
 ]
