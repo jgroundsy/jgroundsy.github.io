@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200&display=swap');
-html{
+
+html {
     font-family: 'Lexend Deca', sans-serif;
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
-    background:rgb(33, 32, 50);
+    background: rgb(33, 32, 50);
     overflow-x: hidden;
 }
 
-body{
+body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
+    background-image: url('/images/background.png');
 }
 
-.no-select{
+.no-select {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -22,7 +24,7 @@ body{
     -o-user-select: none;
 }
 
-#navbar{
+#navbar {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -32,10 +34,10 @@ body{
     text-shadow: 3px 3px 5px #000000;
 }
 
-#navbar a{
+#navbar a {
     float: right;
     margin-right: 1em;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1.2em;
     font-weight: 300;
     font-style: normal;
@@ -44,11 +46,11 @@ body{
     transition: color 200ms ease-in-out;
 }
 
-#navbar #a-home{
-    color: rgba(255,255,255,1);
+#navbar #a-home {
+    color: rgba(255, 255, 255, 1);
 }
 
-#navbar img{
+#navbar img {
     float: left;
     width: 3em;
     height: 3em;
@@ -56,11 +58,11 @@ body{
     margin-top: .5em;
 }
 
-#home{
+#home {
     position: relative;
 }
 
-#home canvas{
+#home canvas {
     position: absolute;
     top: 75%;
     left: 50%;
@@ -68,7 +70,7 @@ body{
     z-index: -1;
 }
 
-#header{
+#header {
     position: absolute;
     width: 19em;
     height: 10em;
@@ -78,49 +80,50 @@ body{
     margin-left: -9.5em;
 }
 
-#header h1{
+#header h1 {
     font-size: 2.6em;
 }
 
-#header h2{
+#header h2 {
     font-size: 32px;
-    color: rgb(90, 86, 152);;
+    color: rgb(90, 86, 152);
+    ;
     margin-top: -1em;
 }
 
-#socials{
+#socials {
     position: relative;
     margin-top: -1em;
 }
 
-#socials .social-icon{
+#socials .social-icon {
     width: 1.5em;
     height: 1.5em;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: invert() brightness(100%) opacity(40%); 
-    display:inline-block;
-    cursor:pointer;
+    filter: invert() brightness(100%) opacity(40%);
+    display: inline-block;
+    cursor: pointer;
     border-radius: 1em;
 }
 
-#socials #linkedin:hover{
+#socials #linkedin:hover {
     filter: invert(34%) sepia(98%) saturate(914%) hue-rotate(170deg) brightness(88%) contrast(103%);
 }
 
-#socials #github:hover{
+#socials #github:hover {
     filter: invert(67%) sepia(75%) saturate(6635%) hue-rotate(343deg) brightness(97%) contrast(95%);
 }
 
-#socials #discord:hover{
+#socials #discord:hover {
     filter: invert(55%) sepia(45%) saturate(563%) hue-rotate(190deg) brightness(91%) contrast(86%);
 }
 
-.arrow-wrapper{
+.arrow-wrapper {
     z-index: 1;
 }
 
-#next-arrow{
+#next-arrow {
     position: absolute;
     width: 2em;
     height: 3em;
@@ -128,15 +131,15 @@ body{
     left: 50%;
     margin-top: -1.5em;
     margin-left: -1em;
-    filter: invert() brightness(100%) opacity(40%); 
+    filter: invert() brightness(100%) opacity(40%);
     transition: filter 200ms ease-in-out;
 }
 
-#next-arrow:hover{
+#next-arrow:hover {
     filter: invert() brightness(100%) opacity(100%);
 }
 
-.arrow-text.bottom{
+.arrow-text.bottom {
     position: absolute;
     top: 90vh;
     left: 50%;
@@ -152,7 +155,7 @@ body{
     -webkit-transition: opacity 400ms ease-in-out, top 200ms ease-in;
 }
 
-.arrow-text.left{
+.arrow-text.left {
     position: absolute;
     top: 46.5%;
     left: 5%;
@@ -168,17 +171,17 @@ body{
     -webkit-transition: opacity 400ms ease-in-out, top 200ms ease-in;
 }
 
-.arrow-wrapper:hover > .arrow-text.bottom{
+.arrow-wrapper:hover>.arrow-text.bottom {
     opacity: 100%;
     top: 88vh;
 }
 
-.arrow-wrapper:hover > .arrow-text.left{
+.arrow-wrapper:hover>.arrow-text.left {
     opacity: 100%;
     top: 46%;
 }
 
-.scroll-snap{
+.scroll-snap {
     height: 100%;
     scroll-snap-align: start;
     text-align: center;
@@ -186,30 +189,30 @@ body{
     overflow: hidden;
 }
 
-.scroll-snap h1{
+.scroll-snap h1 {
     color: white;
 }
 
 /*Projects Section*/
 
-.section-header{
+.section-header {
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-#projects{
+#projects {
     background-image: url('/images/background.png');
     position: relative;
 }
 
 /*Contact Section*/
 
-#contact{
+#contact {
     background-image: url('/images/background.png');
     position: relative;
 }
 
-#form-container{
+#form-container {
     position: absolute;
     top: 45%;
     left: 50%;
@@ -219,31 +222,32 @@ body{
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
 }
-#contact input[type='text']{
+
+#contact input[type='text'] {
     width: 300px;
     height: 2.5em;
     padding: 12px;
     border: 2px solid rgb(97, 97, 163);
     font-family: 'Lexend Deca', sans-serif;
-    background-color: rgba(97,97,163, 0.15);
+    background-color: rgba(97, 97, 163, 0.15);
     color: white;
 }
 
-#contact #form-name{
+#contact #form-name {
     border-radius: 1em 1em 0em 0em;
 }
 
-#contact #form-email{
+#contact #form-email {
     border-radius: 0em 0em 1em 1em;
     margin-bottom: 10px;
     margin-top: -2px;
 }
 
-#contact #form-subject{
+#contact #form-subject {
     border-radius: 1em 1em 0em 0em;
 }
 
-#contact textarea{
+#contact textarea {
     margin-bottom: 1em;
     border: none;
     resize: none;
@@ -256,42 +260,42 @@ body{
     font-family: 'Lexend Deca', sans-serif;
     font-size: .8em;
     border: 2px solid rgb(97, 97, 163);
-    background-color: rgba(97,97,163, 0.15);
+    background-color: rgba(97, 97, 163, 0.15);
     color: white;
     margin-top: -2px;
 }
 
-.btn{
+.btn {
     width: 12em;
     height: 3em;
     font-family: 'Lexend Deca', sans-serif;
     border: 2px solid rgb(97, 97, 163);
-    background-color: rgba(97,97,163, 0.15);
+    background-color: rgba(97, 97, 163, 0.15);
     color: white;
     border-radius: 1em;
     transition: all 200ms ease-in-out;
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     border: 1px solid rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.15);
     color: white;
     font-weight: bold;
 }
 
-#contact input[type='submit']{
+#contact input[type='submit'] {
     width: 12em;
     height: 3em;
     font-family: 'Lexend Deca', sans-serif;
     border: 2px solid rgb(97, 97, 163);
-    background-color: rgba(97,97,163, 0.15);
+    background-color: rgba(97, 97, 163, 0.15);
     color: white;
     border-radius: 1em;
     transition: all 200ms ease-in-out;
 }
 
-#contact input[type='submit']:hover{
+#contact input[type='submit']:hover {
     border: 1px solid rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.15);
     color: white;
@@ -299,24 +303,25 @@ body{
     cursor: pointer;
 }
 
-#contact h1{
+#contact h1 {
     font-size: 2.3em;
 }
 
-#contact h2{
+#contact h2 {
     font-size: 1.8em;
-    color: rgb(90, 86, 152);;
+    color: rgb(90, 86, 152);
+    ;
     margin-top: -1em;
 }
 
-#contact-chars{
+#contact-chars {
     margin-top: -.5em;
     color: white;
     font-family: 'Lexend Deca', sans-serif;
 }
 
 /*Project grid*/
-.project-grid{
+.project-grid {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -326,7 +331,7 @@ body{
     position: absolute;
 }
 
-.project-box{
+.project-box {
     box-sizing: border-box;
     margin: 5px;
     width: 20em;
@@ -337,7 +342,7 @@ body{
     border-radius: 1em;
 }
 
-.project-box .project-image{
+.project-box .project-image {
     width: 20em;
     height: 20em;
     background-size: cover;
@@ -345,7 +350,7 @@ body{
     filter: blur(3px);
 }
 
-.project-box .project-info{
+.project-box .project-info {
     position: absolute;
     left: 0;
     top: 0;
@@ -357,7 +362,7 @@ body{
     padding: 2.5%;
 }
 
-.project-box .project-tools{
+.project-box .project-tools {
     position: absolute;
     left: 0;
     top: 85%;
@@ -366,7 +371,7 @@ body{
     margin-top: 1em;
 }
 
-.project-box .project-tools .tool-text{
+.project-box .project-tools .tool-text {
     width: 150px;
     height: auto;
     font-size: 1.1em;
@@ -379,81 +384,93 @@ body{
     display: none;
 }
 
-.project-box .project-tools .tool{
+.project-box .project-tools .tool {
     height: 25px;
     width: 25px;
     margin-right: 5px;
-    filter: invert() brightness(100%) opacity(40%); 
+    filter: invert() brightness(100%) opacity(40%);
     z-index: 1;
     cursor: default;
 }
 
-.project-box .project-tools .tool.html:hover{
+.project-box .project-tools .tool.html:hover {
     filter: invert(70%) sepia(90%) saturate(5040%) hue-rotate(345deg) brightness(98%) contrast(92%);
 }
-.project-box .project-tools .tool.css:hover{
+
+.project-box .project-tools .tool.css:hover {
     filter: invert(32%) sepia(71%) saturate(3436%) hue-rotate(215deg) brightness(96%) contrast(96%);
 }
-.project-box .project-tools .tool.js:hover{
+
+.project-box .project-tools .tool.js:hover {
     filter: invert(94%) sepia(9%) saturate(3441%) hue-rotate(332deg) brightness(113%) contrast(88%);
 }
-.project-box .project-tools .tool.jquery:hover{
+
+.project-box .project-tools .tool.jquery:hover {
     filter: invert(24%) sepia(95%) saturate(1633%) hue-rotate(186deg) brightness(93%) contrast(94%);
 }
-.project-box .project-tools .tool.cpp:hover{
+
+.project-box .project-tools .tool.cpp:hover {
     filter: invert(16%) sepia(70%) saturate(2304%) hue-rotate(224deg) brightness(97%) contrast(96%);
 }
-.project-box .project-tools .tool.c:hover{
+
+.project-box .project-tools .tool.c:hover {
     filter: invert(10%) sepia(60%) saturate(6437%) hue-rotate(329deg) brightness(91%) contrast(103%);
 }
-.project-box .project-tools .tool.cs:hover{
+
+.project-box .project-tools .tool.cs:hover {
     filter: invert(40%) sepia(13%) saturate(2292%) hue-rotate(255deg) brightness(89%) contrast(93%);
 }
-.project-box .project-tools .tool.aspnet:hover{
+
+.project-box .project-tools .tool.aspnet:hover {
     filter: invert(37%) sepia(69%) saturate(1066%) hue-rotate(171deg) brightness(97%) contrast(91%);
 }
-.project-box .project-tools .tool.maya:hover{
+
+.project-box .project-tools .tool.maya:hover {
     filter: invert(27%) sepia(73%) saturate(2466%) hue-rotate(162deg) brightness(100%) contrast(94%);
 }
-.project-box .project-tools .tool.vb:hover{
+
+.project-box .project-tools .tool.vb:hover {
     filter: invert(26%) sepia(37%) saturate(1313%) hue-rotate(228deg) brightness(90%) contrast(117%);
 }
-.project-box .project-tools .tool.firebase:hover{
+
+.project-box .project-tools .tool.firebase:hover {
     filter: invert(77%) sepia(53%) saturate(4062%) hue-rotate(350deg) brightness(106%) contrast(101%);
 }
-.project-box .project-tools .tool.php:hover{
+
+.project-box .project-tools .tool.php:hover {
     filter: invert(47%) sepia(16%) saturate(1232%) hue-rotate(188deg) brightness(93%) contrast(86%);
 }
-.project-box .project-tools .tool.python:hover{
+
+.project-box .project-tools .tool.python:hover {
     filter: invert(74%) sepia(58%) saturate(485%) hue-rotate(5deg) brightness(108%) contrast(90%);
 }
 
-.project-box .project-info .project-header{
+.project-box .project-info .project-header {
     font-size: 2em;
     font-weight: bold;
     margin-top: 2em;
 }
 
-.project-box .project-info .project-subheader{
+.project-box .project-info .project-subheader {
     font-size: 1.2em;
     margin-top: -1em;
 }
 
-.project-box .project-info .project-description{
+.project-box .project-info .project-description {
     font-size: 1em;
     margin-top: 1em;
 }
 
-.project-grid .project-box{
+.project-grid .project-box {
     border: 2px solid rgb(106, 83, 203);
     cursor: pointer;
 }
 
-.project-grid .project-box .project-info{
+.project-grid .project-box .project-info {
     background-color: rgba(108, 83, 203, 0.15);
 }
 
-.project-box.filler{
+.project-box.filler {
     background-color: rgba(43, 43, 43, 0.3);
     border: 2px solid rgb(68, 68, 68);
     cursor: default;
@@ -494,7 +511,7 @@ body{
 
 
 /*Carousel*/
-#carousel-container{
+#carousel-container {
     width: 84em;
     max-width: 95%;
     height: 22em;
@@ -510,11 +527,12 @@ body{
     -o-transform: translate(-50%, -50%);
 }
 
-.carousel-item{
+.carousel-item {
     display: none;
 }
 
-.prev, .next{
+.prev,
+.next {
     width: 25px;
     height: 70px;
     font-size: 50px;
@@ -527,22 +545,22 @@ body{
     z-index: 1;
 }
 
-.prev{
+.prev {
     left: 0%;
     margin-left: -25px;
 }
 
-.next{
+.next {
     left: 100%;
 }
 
-#carousel-dots{
+#carousel-dots {
     position: absolute;
     top: 22em;
     left: 50%;
 }
 
-.dot{
+.dot {
     width: 15px;
     height: 15px;
     margin: 0 2px;
@@ -553,12 +571,13 @@ body{
     transition: background-color 300ms ease;
 }
 
-.active, .dot:hover{
+.active,
+.dot:hover {
     background-color: #717171;
 }
 
 /*Project Iframe*/
-#project-iframe{
+#project-iframe {
     display: none;
     position: absolute;
     z-index: 1;
@@ -567,7 +586,7 @@ body{
     top: 50%;
     left: 50%;
     opacity: 0;
-    
+
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -575,7 +594,7 @@ body{
     -o-transform: translate(-50%, -50%);
 }
 
-#project-close{
+#project-close {
     display: none;
     opacity: 0;
     color: white;
@@ -590,12 +609,13 @@ body{
 
 /*404 Error Page*/
 
-.page-container{
+.page-container {
     width: 100vw;
     height: 100vh;
     background-image: url('/images/background.png');
 }
-.error-container{
+
+.error-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -603,25 +623,72 @@ body{
     text-align: center;
 }
 
-.error-container p{
+.error-container p {
     color: white;
     font-size: 1.3em;
     margin-top: -1em;
     font-weight: 300;
 }
-.error-wrapper{
+
+.error-wrapper {
     width: 425px;
     height: 200px;
     margin: 0 auto;
 }
 
-.error-span{
+.error-span {
     font-size: 150px;
     color: #343457;
     stroke: #6161A3;
     text-shadow: -2px 0 #6161A3, 0 2px #6161A3, 2px 0 #6161A3, 0 -2px #6161A3;
 }
 
-.error-wrapper > .error-img, .error-wrapper > .error-span{
+.error-wrapper>.error-img,
+.error-wrapper>.error-span {
     vertical-align: middle;
+}
+
+/*Wave*/
+.waves {
+    position: absolute;
+    left: 0;
+    top: 50vh;
+    width: 100%;
+    height: 50vh;
+    min-height: 150px;
+
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
 }
