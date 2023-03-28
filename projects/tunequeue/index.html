@@ -53,24 +53,23 @@
                 URLSearchParams</span>(window.location.search).<span class="one">get</span>(<span
                 class="two">'playlist'</span>);<br><br>
             <span class="cmt">//Initialize your Firebase database. This is how your Spotify authentication is
-                shared</span>; <br>
+                shared.</span><br>
             <span class="one">var</span> firebaseConfig = {<br>
             <span class="indent">apiKey: localStorage.getItem(<span class="two">'firebaseAPIKey'</span>),<br></span>
-            <span class="indent">authDomain: <span class="two">'projectID.firebaseapp.com',</span><br></span>
+            <span class="indent">authDomain: <span class="two">'projectID.firebaseapp.com'</span>,<br></span>
             <span class="indent">databaseURL: <span
-                    class="two">'https://projectID-default-rtdb.firebaseio.com',</span><br></span>
-            <span class="indent">projectId: <span class="two">'projectID',</span><br></span>
-            <span class="indent">storageBucket: <span class="two">'projectID.appspot.com',</span><br></span>
-            <span class="indent">messagingSenderId: <span class="two">'1234546789012',</span><br></span>
-            <span class="indent">appId: <span class="two">'1:234567890123:web:12a345bc67890d12345e6f',</span><br></span>
+                    class="two">'https://projectID-default-rtdb.firebaseio.com'</span>,<br></span>
+            <span class="indent">projectId: <span class="two">'projectID'</span>,<br></span>
+            <span class="indent">storageBucket: <span class="two">'projectID.appspot.com'</span>,<br></span>
+            <span class="indent">messagingSenderId: <span class="two">'1234546789012'</span>,<br></span>
+            <span class="indent">appId: <span class="two">'1:234567890123:web:12a345bc67890d12345e6f'</span>,<br></span>
             <span class="indent">measurementId: <span class="two">'G-123A4BC5678'</span><br></span>
             };<br><br>
 
-            <span class="cmt">//Lastly, include your Spotify client ID and the URI that contians the web files.</span>
+            <span class="cmt">//Lastly, include your Spotify client ID and the URI that contains the web files.</span>
             <br>
             <span class="one">let</span> client_id = <span class="two">'123ab4567cde89fgh0123456i789j012'</span>;<br>
             <span class="one">let</span> redirect_uri = <span class="two">'https%3A%2Fdomain%2Fpath%2Ffile.html'</span>;
-
         </div>
 
         <div class="description-wrapper">

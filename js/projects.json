@@ -77,6 +77,6 @@
             "aspnet, ASP.NET",
             "cs,C#"
         ],
-        "url": "https://equ8.azurewebsites.net/index.aspx"
+        "url": "../projects/equ8/index.aspx"
     }
 ]

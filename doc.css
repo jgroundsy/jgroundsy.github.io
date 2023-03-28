@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200&display=swap');
 
-@media screen and (max-width: 500px){
-    .document{
+@media screen and (max-width: 500px) {
+    .document {
         width: 50em;
         height: 62.5em;
         max-width: 90%;
@@ -9,7 +9,7 @@
     }
 }
 
-body{
+body {
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -18,7 +18,7 @@ body{
     background-image: url(../images/background.png);
 }
 
-.no-select{
+.no-select {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -26,7 +26,7 @@ body{
     -o-user-select: none;
 }
 
-#navbar{
+#navbar {
     font-family: 'Lexend Deca', sans-serif;
     position: fixed;
     top: 0px;
@@ -37,10 +37,10 @@ body{
     text-shadow: 3px 3px 5px #000000;
 }
 
-#navbar a{
+#navbar a {
     float: right;
     margin-right: 1em;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1.2em;
     font-weight: 300;
     font-style: normal;
@@ -49,11 +49,11 @@ body{
     transition: color 200ms ease-in-out;
 }
 
-#navbar #a-projects{
-    color: rgba(255,255,255,1);
+#navbar #a-projects {
+    color: rgba(255, 255, 255, 1);
 }
 
-#navbar img{
+#navbar img {
     float: left;
     width: 3em;
     height: 3em;
@@ -61,7 +61,10 @@ body{
     margin-top: .5em;
 }
 
-.page-container{
+.page-container {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 2em;
+    border-radius: 1em;
     text-align: center;
     width: 80vw;
     margin: 0 auto;
@@ -69,42 +72,43 @@ body{
 
 }
 
-h1{
+h1 {
     color: white;
     font-weight: bold;
     font-size: 2em;
 }
 
-h2{
+h2 {
     font-size: 1.2em;
     margin-top: -1em;
-    color: rgba(255,255,255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
-p{
+
+p {
     color: rgb(175, 175, 175);
 }
 
-.text-section{
+.text-section {
     color: white;
 }
 
-.text-emphasis{
+.text-emphasis {
     color: #6A53CB;
     font-weight: bold;
 }
 
-.description-wrapper{
+.description-wrapper {
     text-align: left;
 }
 
-.document{
+.document {
     width: 40%;
     height: auto;
     aspect-ratio: 1/1.4;
     margin-bottom: 1em;
 }
 
-.video{
+.video {
     width: 60%;
     height: auto;
     aspect-ratio: 16/9;
@@ -112,24 +116,24 @@ p{
     margin-top: 2em;
 }
 
-.images{
+.images {
     width: 75%;
     margin: 0 auto;
 }
 
-.img-row{
+.img-row {
     display: flex;
     flex-wrap: wrap;
     padding: 0 5px;
 }
 
-.img-col{
+.img-col {
     flex: 15%;
     max-width: 50%;
     padding: 0 5px;
 }
 
-.img-col img{
+.img-col img {
     width: 100%;
     height: auto;
     vertical-align: middle;
@@ -137,57 +141,58 @@ p{
     cursor: pointer;
 }
 
-.view-btn{
+.view-btn {
     width: 12em;
     height: 3em;
     font-family: 'Lexend Deca', sans-serif;
     border: 2px solid rgb(97, 97, 163);
-    background-color: rgba(97,97,163, 0.15);
+    background-color: rgba(97, 97, 163, 0.15);
     color: white;
     border-radius: 1em;
     cursor: pointer;
     transition: all 200ms ease-in-out;
 }
 
-.view-btn:hover{
+.view-btn:hover {
     border: 1px solid rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.15);
     color: white;
     font-weight: bold;
 }
 
-.btn-img{
+.btn-img {
     height: 25px;
     width: auto;
     margin-right: .5em;
-    filter: invert() brightness(100%) opacity(60%); 
+    filter: invert() brightness(100%) opacity(60%);
 }
 
-.view-btn > .btn-img, .view-btn > .btn-text{
+.view-btn>.btn-img,
+.view-btn>.btn-text {
     vertical-align: middle;
 }
 
-.mockup-row{
+.mockup-row {
     display: flex;
     flex-wrap: wrap;
     padding: 0 5px;
 }
 
-.mockup-col{
+.mockup-col {
     flex: 25%;
     padding: 0 5px;
 }
 
-.mockup-col img{
+.mockup-col img {
     width: 15vw;
     max-width: 275px;
 }
 
-.mockup-col p{
+.mockup-col p {
     font-size: 3vw;
 }
 
-.code-snippet{
+.code-snippet {
     text-align: left;
     background-color: #3A3858;
     padding: 10px;
@@ -196,31 +201,28 @@ p{
     font-size: 2.5vw;
 }
 
-@media screen and (min-width: 400px){
-    .code-snippet{
+@media screen and (min-width: 400px) {
+    .code-snippet {
         font-size: 1em;
     }
 
-    .mockup-col p{
+    .mockup-col p {
         font-size: 1em;
     }
 }
 
-.code-snippet .cmt{
+.code-snippet .cmt {
     color: #93929e;
 }
 
-.code-snippet .indent{
+.code-snippet .indent {
     margin-left: 28px;
 }
 
-.code-snippet .one{
+.code-snippet .one {
     color: #9E98F0;
 }
 
-.code-snippet .two{
+.code-snippet .two {
     color: #9b6de0;
 }
-
-
-
