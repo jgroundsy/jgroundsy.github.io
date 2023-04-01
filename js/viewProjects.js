@@ -32,6 +32,10 @@ $(document).ready(function () {
             }
         }
     }
+
+    window.addEventListener('resize', function (e) {
+        resizeProjects();
+    }, true);
 });
 
 //detect when window size changes and update how many projects can be displayed.
